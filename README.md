@@ -26,3 +26,4 @@ Play on [eddex.itch.io/ahirutochi](https://eddex.itch.io/ahirutochi)!
 ## Sounds used
 
 - https://www.zapsplat.com/music/magic-trick-puff-of-smoke-vanish-disappear/
+- https://www.zapsplat.com/music/drinking-glass-set-down-on-metal-table-version-2/

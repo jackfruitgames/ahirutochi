@@ -34,6 +34,7 @@ func _on_tmp_hit_button_pressed() -> void:
 func _on_tmp_fill_tank_button_pressed() -> void:
 	start_filling()
 	$FillTankButton.disabled = true
+	$AudioStreamPlayer.play()
 
 func _on_tank_fill_timer_timeout() -> void:
 	if tank_fill_procentage < 100:
