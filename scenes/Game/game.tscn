@@ -49,18 +49,18 @@ one_shot = true
 [node name="Pipes" type="Node2D" parent="."]
 
 [node name="Pipe1" type="Sprite2D" parent="Pipes"]
-position = Vector2(670, 859)
+position = Vector2(663, 859)
 texture = ExtResource("5_2d4pp")
 
 [node name="Pipe2" type="Sprite2D" parent="Pipes"]
-position = Vector2(921, 874)
+position = Vector2(882, 874)
 texture = ExtResource("6_anywr")
 
 [node name="Cannon" parent="Pipes" instance=ExtResource("7_ho0l0")]
-position = Vector2(980, 858)
+position = Vector2(998, 859)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
-position = Vector2(434, 878)
+position = Vector2(387, 891)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
 position = Vector2(804, 828)

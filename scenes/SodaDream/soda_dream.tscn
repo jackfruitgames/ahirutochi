@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d37y8ymcxeu2y"]
+[gd_scene load_steps=10 format=3 uid="uid://d37y8ymcxeu2y"]
 
 [ext_resource type="Script" path="res://scenes/SodaDream/soda_dream.gd" id="1_3stmv"]
 [ext_resource type="Texture2D" uid="uid://b0ajg4c5ae14x" path="res://assets/img/soda/SodaDream.png" id="2_pye7b"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cdc5ghbstsw6f" path="res://assets/img/soda/Arrow.png" id="4_3xck1"]
 [ext_resource type="Texture2D" uid="uid://c8rfdh7f0n65w" path="res://assets/img/button/button .png" id="5_ffeep"]
 [ext_resource type="Texture2D" uid="uid://n70hsivgcsql" path="res://assets/img/button/pressed_button.png" id="5_ogv6w"]
+[ext_resource type="Texture2D" uid="uid://bvbimh1cxqeg1" path="res://assets/img/lever/Lever_left.png" id="7_0amf7"]
+[ext_resource type="Texture2D" uid="uid://bp37h66iwdrvo" path="res://assets/img/lever/Lever_right.png" id="8_pwdan"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7w7m"]
 bg_color = Color(1, 0.843137, 0, 1)
@@ -17,11 +19,11 @@ script = ExtResource("1_3stmv")
 texture = ExtResource("2_pye7b")
 
 [node name="PressureGauge" type="Sprite2D" parent="."]
-position = Vector2(-116, -156)
+position = Vector2(-116, -208)
 texture = ExtResource("3_dkpbu")
 
 [node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(-128, -208)
+position = Vector2(-128, -260)
 rotation = -1.5708
 texture = ExtResource("4_3xck1")
 centered = false
@@ -42,13 +44,14 @@ grow_vertical = 2
 texture_normal = ExtResource("5_ffeep")
 texture_pressed = ExtResource("5_ogv6w")
 
-[node name="FillTankButton" type="Button" parent="."]
-offset_left = -152.0
-offset_top = -352.0
-offset_right = -34.0
-offset_bottom = -321.0
+[node name="FillTankButton" type="TextureButton" parent="."]
+offset_left = -271.0
+offset_top = 24.0
+offset_right = -207.0
+offset_bottom = 104.0
 disabled = true
-text = "Fill Tank (tmp)"
+texture_normal = ExtResource("7_0amf7")
+texture_pressed = ExtResource("8_pwdan")
 
 [node name="TankFillProgressBar" type="ProgressBar" parent="."]
 offset_left = -55.0
