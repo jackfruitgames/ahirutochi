@@ -21,5 +21,7 @@ func kill_the_enemy() -> void:
 
 
 func _on_hit_timer_timeout() -> void:
+	var damage = 5
 	if is_hitting:
-		hit.emit(5)
+		GameState.health -= damage
+		hit.emit(damage)
