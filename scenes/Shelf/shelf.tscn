@@ -10,4 +10,4 @@ script = ExtResource("1_77xpn")
 texture = ExtResource("2_otnho")
 
 [node name="IngredientSpawns" type="Node2D" parent="."]
-position = Vector2(-45, -218)
+position = Vector2(-7, -155)
