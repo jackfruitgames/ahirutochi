@@ -9,10 +9,8 @@ func _process(delta: float) -> void:
 
 func _on_soda_dream_shot_fired() -> void:
 	new_random_recipe()
-	if $Enemies/EnemyGroup.get_child_count() > 0:
-		for enemy in $Enemies/EnemyGroup.get_children():
-			enemy.kill_the_enemy()
-			$Enemies.enemy_killed()
+	$Pipes/Cannon.cannon_shot()
+	$Enemies/DeathTimer.start()
 
 func _on_pot_bubble_exploded() -> void:
 	GameState.health -= 10
@@ -29,3 +27,10 @@ func _on_pot_pot_ready() -> void:
 	GameState.current_used_ingredients = []
 	new_random_recipe()
 	$SodaDream.pot_ready()
+
+
+func _on_death_timer_timeout() -> void:
+	if $Enemies/EnemyGroup.get_child_count() > 0:
+		for enemy in $Enemies/EnemyGroup.get_children():
+			enemy.kill_the_enemy()
+			$Enemies.enemy_killed()
