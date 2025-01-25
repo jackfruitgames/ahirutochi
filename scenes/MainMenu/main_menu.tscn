@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://uwol3hthxdo6"]
+[gd_scene load_steps=12 format=3 uid="uid://uwol3hthxdo6"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_4rau3"]
 [ext_resource type="Texture2D" uid="uid://hfxubik1vsgt" path="res://assets/img/ui/Summer7.png" id="2_ag3pn"]
 [ext_resource type="StyleBox" uid="uid://cv6axvy5k3wis" path="res://scenes/MainMenu/panel_stylebox_flat.tres" id="4_be3n6"]
 [ext_resource type="FontFile" uid="uid://brxvlj5tsma6r" path="res://assets/fonts/UnifrakturCook/UnifrakturCook-Bold.ttf" id="5_1e246"]
-[ext_resource type="Texture2D" uid="uid://3q6a18ipilg1" path="res://assets/img/scribbles/GREEN.png" id="5_1yv50"]
+[ext_resource type="Texture2D" uid="uid://5800wjtcpm7w" path="res://assets/img/ui/ducks/duck-benj-smol.png" id="5_6xp74"]
 [ext_resource type="FontFile" uid="uid://dy0m53fp4wgh" path="res://assets/fonts/MacondoSwashCaps/MacondoSwashCaps-Regular.ttf" id="5_ldp32"]
+[ext_resource type="Texture2D" uid="uid://dpwe86bgpjqsl" path="res://assets/img/ui/ducks/duck-brian-smol.png" id="7_giajb"]
+[ext_resource type="Texture2D" uid="uid://l3asmo2sn7w7" path="res://assets/img/ui/ducks/duck-jan-smol.png" id="8_hckpt"]
+[ext_resource type="Texture2D" uid="uid://dvpldakf3i0do" path="res://assets/img/ui/ducks/duck-marco-smol.png" id="9_uexr0"]
+[ext_resource type="Texture2D" uid="uid://b01oakwrpdhrm" path="res://assets/img/ui/ducks/duck-nina-smol.png" id="10_6x1wo"]
+[ext_resource type="Texture2D" uid="uid://c7hkhp3rpm6hj" path="res://assets/img/ui/ducks/duck-yannik-smol.png" id="11_t8xly"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -81,7 +86,7 @@ anchor_bottom = 1.0
 offset_left = -66.5
 offset_top = -74.0
 offset_right = 66.5
-offset_bottom = -60.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_1e246")
@@ -106,9 +111,10 @@ anchors_preset = -1
 anchor_left = 0.0254876
 anchor_top = 0.0433412
 anchor_right = 0.972961
-anchor_bottom = 0.950552
+anchor_bottom = 0.874705
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/v_separation = 25
 columns = 3
 metadata/_edit_use_anchors_ = true
 
@@ -119,20 +125,21 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_1yv50")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_6xp74")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("5_ldp32")
 theme_override_fonts/bold_font = ExtResource("5_ldp32")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
-text = "[b]Benj[/b]
+text = "[center][b]Benj[/b]
 - Code
-- Pixelart"
+- Pixelart[/center]"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Credits/GridContainer"]
 layout_mode = 2
@@ -141,19 +148,21 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer2"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_1yv50")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_giajb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("5_ldp32")
 theme_override_fonts/bold_font = ExtResource("5_ldp32")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
-text = "[b]Brian[/b]
-- Master of Pixelart"
+text = "[center][b]Brian[/b]
+- Master of Pixelart
+- Code[/center]"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Credits/GridContainer"]
 layout_mode = 2
@@ -162,19 +171,20 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer3"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_1yv50")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_hckpt")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("5_ldp32")
 theme_override_fonts/bold_font = ExtResource("5_ldp32")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
-text = "[b]Jan[/b]
-- Code"
+text = "[center][b]Jan[/b]
+- Code[/center]"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="Credits/GridContainer"]
 layout_mode = 2
@@ -183,20 +193,21 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer4"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_1yv50")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_uexr0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("5_ldp32")
 theme_override_fonts/bold_font = ExtResource("5_ldp32")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
-text = "[b]Marco[/b]
+text = "[center][b]Marco[/b]
 - Code
-- Pixelart"
+- Pixelart[/center]"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="Credits/GridContainer"]
 layout_mode = 2
@@ -205,19 +216,20 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer5"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_1yv50")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_6x1wo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer5"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("5_ldp32")
 theme_override_fonts/bold_font = ExtResource("5_ldp32")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
-text = "[b]Nina[/b]
-- Pixelart"
+text = "[center][b]Nina[/b]
+- Pixelart[/center]"
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="Credits/GridContainer"]
 layout_mode = 2
@@ -226,20 +238,22 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer6"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_1yv50")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_t8xly")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer6"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("5_ldp32")
 theme_override_fonts/bold_font = ExtResource("5_ldp32")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
-text = "[b]Yannik[/b]
+text = "[center][b]Yannik[/b]
 - Project Management
-- Head of Coke"
+- Head of Coke
+[/center]"
 
 [node name="CloseCreditsButton" type="Button" parent="Credits"]
 layout_mode = 1
@@ -251,7 +265,7 @@ anchor_bottom = 1.0
 offset_left = -66.5
 offset_top = -74.0
 offset_right = 66.5
-offset_bottom = -60.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_1e246")
