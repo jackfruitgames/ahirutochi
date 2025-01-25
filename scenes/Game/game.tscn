@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://b86cp73iwayqj"]
+
+[ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
+[ext_resource type="Texture2D" uid="uid://cd4dofb2f35cy" path="res://assets/img/scribbles/background.png" id="2_f00xl"]
+[ext_resource type="Texture2D" uid="uid://c1v0xwh1j5bie" path="res://assets/img/scribbles/blue_ingredient.png" id="3_8ep7p"]
+[ext_resource type="Texture2D" uid="uid://3q6a18ipilg1" path="res://assets/img/scribbles/green_ingredient.png" id="4_w43y6"]
+[ext_resource type="Texture2D" uid="uid://c8tpyjspeuivo" path="res://assets/img/scribbles/pink_ingredient.png" id="5_frg44"]
+[ext_resource type="PackedScene" uid="uid://ci5k534ymwvur" path="res://scenes/Pot/pot.tscn" id="6_22nnk"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_er28t")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_f00xl")
+
+[node name="BlueIngredient" type="Sprite2D" parent="."]
+position = Vector2(270, 461)
+texture = ExtResource("3_8ep7p")
+
+[node name="GreenIngredient" type="Sprite2D" parent="."]
+position = Vector2(553, 464)
+texture = ExtResource("4_w43y6")
+
+[node name="PinkIngredient" type="Sprite2D" parent="."]
+position = Vector2(820, 464)
+texture = ExtResource("5_frg44")
+
+[node name="Pot" parent="." instance=ExtResource("6_22nnk")]
+position = Vector2(672, 726)
