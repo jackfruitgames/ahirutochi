@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d37y8ymcxeu2y"]
+[gd_scene load_steps=7 format=3 uid="uid://d37y8ymcxeu2y"]
 
 [ext_resource type="Script" path="res://scenes/SodaDream/soda_dream.gd" id="1_3stmv"]
 [ext_resource type="Texture2D" uid="uid://b0ajg4c5ae14x" path="res://assets/img/soda/SodaDream.png" id="2_pye7b"]
 [ext_resource type="Texture2D" uid="uid://js8uvdishx88" path="res://assets/img/soda/PressureGauge.png" id="3_dkpbu"]
 [ext_resource type="Texture2D" uid="uid://cdc5ghbstsw6f" path="res://assets/img/soda/Arrow.png" id="4_3xck1"]
+[ext_resource type="Texture2D" uid="uid://n70hsivgcsql" path="res://assets/img/button/pressed_button.png" id="5_ogv6w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7w7m"]
 bg_color = Color(1, 0.843137, 0, 1)
@@ -25,19 +26,20 @@ texture = ExtResource("4_3xck1")
 centered = false
 offset = Vector2(-128, -512)
 
-[node name="TmpHitButton" type="Button" parent="."]
+[node name="TmpHitButton" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 48.0
-offset_top = -392.0
-offset_right = 212.0
-offset_bottom = -288.0
+offset_top = -304.0
+offset_right = 120.0
+offset_bottom = -216.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Hit the enemy (tmp)"
+texture_normal = ExtResource("5_ogv6w")
+texture_pressed = ExtResource("5_ogv6w")
 
 [node name="TmpFillTankButton" type="Button" parent="."]
 offset_left = -152.0
