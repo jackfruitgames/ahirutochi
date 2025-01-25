@@ -218,12 +218,11 @@ self_modulate = Color(0.733333, 0.929412, 1, 1)
 script = ExtResource("2_uyucb")
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 250)
+position = Vector2(0, 60)
 sprite_frames = SubResource("SpriteFrames_c63m7")
 frame_progress = 0.838708
 
 [node name="Pot" type="Sprite2D" parent="."]
-position = Vector2(0, 184)
 texture = ExtResource("3_y3t6x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -232,18 +231,17 @@ libraries = {
 }
 
 [node name="Bubble1" parent="." instance=ExtResource("4_rwl4r")]
-position = Vector2(3, 160)
+position = Vector2(40, -39)
 initial_spawn_delay = 3.5
 
 [node name="Bubble2" parent="." instance=ExtResource("4_rwl4r")]
-position = Vector2(-49, 153)
+position = Vector2(-40, -27)
 
 [node name="Bubble3" parent="." instance=ExtResource("4_rwl4r")]
-position = Vector2(55, 150)
 initial_spawn_delay = 6.0
 
 [node name="PotContentArea" type="Area2D" parent="."]
 
 [node name="PotCollision" type="CollisionShape2D" parent="PotContentArea"]
-position = Vector2(-5, 139)
+position = Vector2(0, -54)
 shape = SubResource("RectangleShape2D_wk7gf")
