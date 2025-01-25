@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdc5ghbstsw6f" path="res://assets/img/soda/Arrow.png" id="4_3xck1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7w7m"]
-bg_color = Color(0.891091, 0.38848, 0.708282, 1)
+bg_color = Color(1, 0.843137, 0, 1)
 
 [node name="SodaDream" type="Node2D"]
 script = ExtResource("1_3stmv")
