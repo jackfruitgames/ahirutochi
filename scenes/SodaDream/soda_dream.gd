@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	$Arrow.rotation_degrees = pressure - 90
 
 func pot_ready() -> void:
-	$TmpFillTankButton.disabled = false
+	$FillTankButton.disabled = false
 
 # start the whole filling process from outside
 func start_filling() -> void:
@@ -22,12 +22,12 @@ func _on_tmp_hit_button_pressed() -> void:
 		tank_fill_procentage = 0
 		$TankFillProgressBar.value = tank_fill_procentage
 		pressure = 0
-		$TmpFillTankButton.disabled = true
+		$FillTankButton.disabled = true
 		shot_fired.emit()
 
 func _on_tmp_fill_tank_button_pressed() -> void:
 	start_filling()
-	$TmpFillTankButton.disabled = true
+	$FillTankButton.disabled = true
 
 func _on_tank_fill_timer_timeout() -> void:
 	if tank_fill_procentage < 100:
