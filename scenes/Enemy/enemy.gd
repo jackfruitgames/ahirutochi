@@ -1,9 +1,11 @@
 extends Node2D
 
+const move_speed = 4
+
 # target position
 var target_position = null
 # true if the enemy should be hitting the house
-var is_hitting = true
+var is_hitting = false
 # emits every time a hit is done by the enemy
 signal hit(damage: int)
 
@@ -12,11 +14,11 @@ signal hit(damage: int)
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func _physics_process(delta: float) -> void:
+	if target_position:
+		position = position.move_toward(target_position, move_speed)
+	if not is_hitting and position.distance_to(target_position) < 1:
+		is_hitting = true
 
 func kill_the_enemy() -> void:
 	queue_free()
