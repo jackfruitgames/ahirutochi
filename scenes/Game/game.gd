@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 
 
 func _on_soda_dream_shot_fired() -> void:
-	get_node("Enemy").kill_the_enemy()
+	if $Enemy:
+		$Enemy.kill_the_enemy()
