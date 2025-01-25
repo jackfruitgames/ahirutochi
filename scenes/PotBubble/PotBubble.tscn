@@ -1,14 +1,88 @@
-[gd_scene load_steps=3 format=3 uid="uid://bck8diam5h51j"]
+[gd_scene load_steps=14 format=3 uid="uid://bck8diam5h51j"]
 
 [ext_resource type="Texture2D" uid="uid://ba72l15g8ucd1" path="res://assets/img/pot/BubbleSimple.png" id="1_1bdq4"]
 [ext_resource type="Script" path="res://scenes/PotBubble/pot_bubble.gd" id="2_303k5"]
+[ext_resource type="Texture2D" uid="uid://bdcbjwsk6htpn" path="res://assets/img/pot/explosion_96_4x.png" id="3_mx7bh"]
+[ext_resource type="AudioStream" uid="uid://1xge5lqk41x6" path="res://assets/sounds/zapsplat_magic_puff_of_smoke_vanish.mp3" id="4_wg8oe"]
 
-[node name="Bubble" type="Sprite2D"]
-scale = Vector2(0.197266, 0.197266)
-texture = ExtResource("1_1bdq4")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6485c"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(0, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjn2y"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(384, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hcdn"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(768, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85v3v"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(1152, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g14ua"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(1536, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udga3"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(1920, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vuvp"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(2304, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiu0b"]
+atlas = ExtResource("3_mx7bh")
+region = Rect2(2688, 0, 384, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bscb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6485c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjn2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hcdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85v3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g14ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udga3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vuvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiu0b")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
+
+[node name="Node2D" type="Node2D"]
 script = ExtResource("2_303k5")
 
-[node name="BubbleButton" type="TextureButton" parent="."]
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.77539, 1.77539)
+sprite_frames = SubResource("SpriteFrames_7bscb")
+frame = 7
+frame_progress = 1.0
+
+[node name="Bubble" type="Sprite2D" parent="."]
+scale = Vector2(0.197266, 0.197266)
+texture = ExtResource("1_1bdq4")
+
+[node name="BubbleButton" type="TextureButton" parent="Bubble"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,5 +96,9 @@ grow_vertical = 2
 [node name="RespawnTimer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="pressed" from="BubbleButton" to="." method="_on_bubble_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wg8oe")
+bus = &"Sounds"
+
+[connection signal="pressed" from="Bubble/BubbleButton" to="." method="_on_bubble_button_pressed"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

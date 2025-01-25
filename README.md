@@ -15,9 +15,14 @@ Play on [eddex.itch.io/ahirutochi](https://eddex.itch.io/ahirutochi)!
 - https://free-game-assets.itch.io/free-summer-pixel-art-backgrounds
 - https://fonts.google.com/specimen/UnifrakturCook
 - https://fonts.google.com/specimen/Macondo+Swash+Caps
+- https://opengameart.org/content/explosion-48px-96px-and-vector-version
 
 ## 🎵 Music used
 
 - https://opengameart.org/content/battle-theme-a
 - https://opengameart.org/content/victory-fanfare-short
 - https://opengameart.org/content/medieval-the-old-tower-inn
+
+## Sounds used
+
+- https://www.zapsplat.com/music/magic-trick-puff-of-smoke-vanish-disappear/

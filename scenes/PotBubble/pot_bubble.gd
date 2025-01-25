@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 signal bubble_exploded
 
@@ -12,7 +12,9 @@ var float_right: bool = true
 var popped: bool = false
 
 func _ready() -> void:
-	visible = false
+	$Bubble.visible = false
+	$Explosion.visible = false
+	$Explosion.animation_finished.connect(explosion_finished)
 
 func _process(delta: float) -> void:
 	delta_sum += delta
@@ -21,7 +23,7 @@ func _process(delta: float) -> void:
 			return # wait for initial delay before doing anything
 		else:
 			initial_delay = false
-			visible = true
+			$Bubble.visible = true
 	
 	if (delta_sum > 2):
 		delta_sum = 0
@@ -34,14 +36,20 @@ func _process(delta: float) -> void:
 	
 	if position.y < -500 and !popped:
 		print("bubble: bubble explosion")
+		$Explosion.visible = true
+		$Explosion.play("default")
+		$AudioStreamPlayer.play()
 		bubble_exploded.emit()
 		popped = true
 		reset_bubble()
 
 
+func explosion_finished():
+	$Explosion.visible = false
+
 func reset_bubble():
-	visible = false
-	$RespawnTimer.wait_time = randf_range(0.5, 2)
+	$Bubble.visible = false
+	$RespawnTimer.wait_time = randf_range(1, 3)
 	$RespawnTimer.start()
 
 
@@ -54,5 +62,5 @@ func _on_bubble_button_pressed() -> void:
 func _on_respawn_timer_timeout() -> void:
 	print("bubble: bubble respawn")
 	popped = false
-	visible = true
+	$Bubble.visible = true
 	position = Vector2i(randi_range(-50, 50), 0)

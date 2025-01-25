@@ -8,6 +8,7 @@ var music_player: AudioStreamPlayer
 
 func _ready() -> void:
 	var audio_stream_player: AudioStreamPlayer = AudioStreamPlayer.new()
+	audio_stream_player.bus = AudioServer.get_bus_name(1)
 	music_player = audio_stream_player
 	add_child(audio_stream_player)
 
