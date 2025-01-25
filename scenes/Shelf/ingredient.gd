@@ -1,23 +1,17 @@
 extends Node2D
 
+signal ingredient_used
+signal ingredient_selected
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-var ingredient: Enums.INGREDIENT
+var ingredient: String
 var selected = false
 var start_position = Vector2()
 var pot_position
 
 func set_type(type: Enums.INGREDIENT):
 	var sprite = $Ingredient
-	ingredient = type
-	sprite.texture = load("res://assets/img/scribbles/%s.png" % Enums.INGREDIENT.keys()[type])
+	ingredient = Enums.INGREDIENT.keys()[type]
+	sprite.texture = load("res://assets/img/scribbles/%s.png" % ingredient)
 	
 func set_start_position(_position: Vector2):	
 	start_position = _position
@@ -30,6 +24,7 @@ func _on_ingredient_area_2d_input_event(viewport: Node, event: InputEvent, shape
 	if Input.is_action_just_pressed("ClickOnShelfItem"):
 		GameState.is_hand_full = true
 		selected = true
+		ingredient_selected.emit(ingredient, start_position)
 
 	if selected and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
@@ -54,9 +49,9 @@ func _on_ingredient_area_2d_area_entered(area: Area2D) -> void:
 		
 		var pot = area.get_parent()
 		pot_position = pot.global_position
-		#reset_position()
 	
-		pot.add_ingredient(ingredient)
+		pot.add_ingredient(Enums.INGREDIENT.get(ingredient))
+		ingredient_used.emit(ingredient)
 	
 func use():
 	"""
