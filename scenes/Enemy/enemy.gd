@@ -1,5 +1,7 @@
 extends Node2D
 
+# target position
+var target_position = null
 # true if the enemy should be hitting the house
 var is_hitting = true
 # emits every time a hit is done by the enemy

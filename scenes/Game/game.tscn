@@ -41,7 +41,10 @@ wait_time = 5.0
 autostart = true
 
 [node name="SpawnPoint" type="Node2D" parent="Enemies"]
-position = Vector2(1457, 914)
+position = Vector2(2220, 900)
+
+[node name="TargetPoint" type="Node2D" parent="Enemies"]
+position = Vector2(1403, 900)
 
 [connection signal="bubble_exploded" from="Pot" to="." method="_on_pot_bubble_exploded"]
 [connection signal="shot_fired" from="SodaDream" to="." method="_on_soda_dream_shot_fired"]
