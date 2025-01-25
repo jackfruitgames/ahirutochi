@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b86cp73iwayqj"]
+[gd_scene load_steps=9 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
 [ext_resource type="Texture2D" uid="uid://br8dqcaqw3w8e" path="res://assets/img/background/Summer4.png" id="2_4pqlh"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://qxnc0cgdqv36" path="res://scenes/House/house.tscn" id="3_r0or4"]
 [ext_resource type="PackedScene" uid="uid://ci5k534ymwvur" path="res://scenes/Pot/pot.tscn" id="6_22nnk"]
 [ext_resource type="PackedScene" uid="uid://d37y8ymcxeu2y" path="res://scenes/SodaDream/soda_dream.tscn" id="6_aey6b"]
-[ext_resource type="PackedScene" uid="uid://75mrk5v6elk0" path="res://scenes/Enemy/enemy.tscn" id="7_q5ej7"]
 [ext_resource type="Script" path="res://scenes/Game/enemy_manager.gd" id="8_bt56v"]
 [ext_resource type="PackedScene" uid="uid://ddiqhqerpc3ph" path="res://scenes/Recipe/recipe.tscn" id="8_lxuc3"]
 
@@ -24,6 +23,7 @@ texture = ExtResource("2_4pqlh")
 position = Vector2(164, 236)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
+self_modulate = Color(1, 0.635294, 1, 1)
 position = Vector2(672, 726)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
@@ -37,12 +37,12 @@ script = ExtResource("8_bt56v")
 
 [node name="EnemyGroup" type="Node" parent="Enemies"]
 
-[node name="StartEnemy" parent="Enemies/EnemyGroup" instance=ExtResource("7_q5ej7")]
-position = Vector2(1646, 616)
-
 [node name="NewEnemyTimer" type="Timer" parent="Enemies"]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
+
+[node name="SpawnPoint" type="Node2D" parent="Enemies"]
+position = Vector2(1739, 899)
 
 [connection signal="bubble_exploded" from="Pot" to="." method="_on_pot_bubble_exploded"]
 [connection signal="shot_fired" from="SodaDream" to="." method="_on_soda_dream_shot_fired"]
