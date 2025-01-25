@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://njyfdrgwjiyb"]
+[gd_scene load_steps=4 format=3 uid="uid://b2llmdp2ymv2h"]
 
 [ext_resource type="Texture2D" uid="uid://c1v0xwh1j5bie" path="res://assets/img/scribbles/BLUE.png" id="1_vbghj"]
 [ext_resource type="Script" path="res://scenes/Shelf/ingredient.gd" id="2_sk287"]

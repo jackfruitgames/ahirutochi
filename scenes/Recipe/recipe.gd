@@ -1,9 +1,9 @@
 extends Node2D
 
 var textures: Array = [
-	preload("res://assets/img/potions/RED.png"),
-	preload("res://assets/img/potions/GREEN.png"),
-	preload("res://assets/img/potions/BLUE.png"),
+	preload("res://assets/img/ingredient/RED.png"),
+	preload("res://assets/img/ingredient/GREEN.png"),
+	preload("res://assets/img/ingredient/BLUE.png"),
 ]
 
 
