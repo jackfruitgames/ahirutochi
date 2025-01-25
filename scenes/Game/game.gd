@@ -31,9 +31,11 @@ func _on_pot_pot_ready() -> void:
 	new_random_recipe()
 	$SodaDream.pot_ready()
 
-
 func _on_death_timer_timeout() -> void:
 	if $Enemies/EnemyGroup.get_child_count() > 0:
 		for enemy in $Enemies/EnemyGroup.get_children():
 			enemy.kill_the_enemy()
 			$Enemies.enemy_killed()
+
+func _on_soda_dream_filling() -> void:
+	$Pot.empty_the_pot()

@@ -3,7 +3,6 @@ extends Sprite2D
 signal bubble_exploded
 signal pot_ready
 
-
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
 	$Fire.play()
@@ -11,11 +10,8 @@ func _ready() -> void:
 	$Bubble2.bubble_exploded.connect(on_bubble_exploded)
 	$Bubble3.bubble_exploded.connect(on_bubble_exploded)
 
-
 func on_bubble_exploded() -> void:
 	bubble_exploded.emit()
-	print("pot: bubble exploded")
-
 
 func add_ingredient(ingredient: Enums.INGREDIENT):
 	$PotBlubber.modulate = Color.html("#000000")
@@ -33,9 +29,10 @@ func add_ingredient(ingredient: Enums.INGREDIENT):
 	GameState.current_used_ingredients.append(ingredient)
 	check_if_recipe_is_finished()
 
+func empty_the_pot():
+	$PotBlubber.modulate = Color.WHITE
 
 func check_if_recipe_is_finished():
-	print("\n\n")
 	var index = 0
 	print("RECEPEYY: ", GameState.current_recipe)
 	print("CURRENT USED: ", GameState.current_used_ingredients)

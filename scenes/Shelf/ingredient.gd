@@ -1,13 +1,13 @@
 extends Node2D
 
-signal ingredient_used
 signal ingredient_selected
-
 var ingredient: String
 var selected = false
 var start_position = Vector2()
 var pot_position
-var index 
+var index
+var already_used = false
+var already_replicated = false
 
 func set_type(type: Enums.INGREDIENT):
 	var sprite = $Ingredient
@@ -18,7 +18,6 @@ func _on_ingredient_area_2d_input_event(viewport: Node, event: InputEvent, shape
 	if Input.is_action_just_pressed("ClickOnShelfItem"):
 		GameState.is_hand_full = true
 		selected = true
-		ingredient_selected.emit(ingredient, index)
 
 	if selected and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
@@ -37,17 +36,22 @@ func _physics_process(delta: float) -> void:
 			use()
 
 func _on_ingredient_area_2d_area_entered(area: Area2D) -> void:
+	if already_used:
+		return
 	if area.name == "PotContentArea":
 		selected = false
 		GameState.is_hand_full = false
-		
+		already_used = true
+
 		var pot = area.get_parent()
 		pot_position = pot.global_position
-	
 		pot.add_ingredient(Enums.INGREDIENT.get(ingredient))
-	
+
 func use():
 	"""
 	Uses the current ingredient and destroys it
 	"""
+	if not already_replicated:
+		ingredient_selected.emit(ingredient, index)
+		already_replicated = true
 	queue_free()

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/Shelf/ingredient.gd" id="2_sk287"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dla7g"]
-radius = 109.6
+radius = 71.0282
 
 [node name="Ingredient" type="Node2D"]
 z_index = 5
@@ -13,10 +13,10 @@ script = ExtResource("2_sk287")
 [node name="Ingredient" type="Sprite2D" parent="."]
 texture = ExtResource("1_vbghj")
 
-[node name="IngredientArea2D" type="Area2D" parent="Ingredient"]
+[node name="IngredientArea2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient/IngredientArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientArea2D"]
 shape = SubResource("CircleShape2D_dla7g")
 
-[connection signal="area_entered" from="Ingredient/IngredientArea2D" to="." method="_on_ingredient_area_2d_area_entered"]
-[connection signal="input_event" from="Ingredient/IngredientArea2D" to="." method="_on_ingredient_area_2d_input_event"]
+[connection signal="area_entered" from="IngredientArea2D" to="." method="_on_ingredient_area_2d_area_entered"]
+[connection signal="input_event" from="IngredientArea2D" to="." method="_on_ingredient_area_2d_input_event"]

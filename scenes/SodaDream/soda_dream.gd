@@ -1,6 +1,7 @@
 extends Node2D
 
 signal shot_fired
+signal filling
 # Fill of the tank from 0 to 100
 var tank_fill_procentage = 0
 # Pressure from 0 to 180 max
@@ -15,6 +16,7 @@ func pot_ready() -> void:
 # start the whole filling process from outside
 func start_filling() -> void:
 	$TankFillTimer.start()
+	filling.emit()
 
 func _on_tmp_hit_button_pressed() -> void:
 	if pressure >= 180:

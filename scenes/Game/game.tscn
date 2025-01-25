@@ -72,4 +72,5 @@ position = Vector2(1375, 32)
 [connection signal="timeout" from="Enemies/DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="bubble_exploded" from="Pot" to="." method="_on_pot_bubble_exploded"]
 [connection signal="pot_ready" from="Pot" to="." method="_on_pot_pot_ready"]
+[connection signal="filling" from="SodaDream" to="." method="_on_soda_dream_filling"]
 [connection signal="shot_fired" from="SodaDream" to="." method="_on_soda_dream_shot_fired"]
