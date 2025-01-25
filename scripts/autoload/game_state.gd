@@ -7,3 +7,4 @@ var current_recipe: Array = [
 	randi_range(0, 2) as Enums.INGREDIENT,
 	randi_range(0, 2) as Enums.INGREDIENT
 ]
+var current_used_ingredients: Array = []

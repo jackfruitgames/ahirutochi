@@ -7,6 +7,9 @@ var tank_fill_procentage = 0
 var pressure = 0
 
 
+func pot_ready() -> void:
+	$TmpFillTankButton.disabled = false
+
 # start the whole filling process from outside
 func start_filling() -> void:
 	$TankFillTimer.start()
@@ -19,8 +22,9 @@ func _on_tmp_hit_button_pressed() -> void:
 		$TankFillProgressBar.value = tank_fill_procentage
 		pressure = 0
 		$PressureGaugeNumber.text = str(pressure)
-		$TmpFillTankButton.disabled = false
+		$TmpFillTankButton.disabled = true
 		shot_fired.emit()
+
 
 
 func _on_tmp_fill_tank_button_pressed() -> void:

@@ -8,3 +8,6 @@ script = ExtResource("1_77xpn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_otnho")
+
+[node name="IngredientSpawns" type="Node2D" parent="."]
+position = Vector2(-45, -218)

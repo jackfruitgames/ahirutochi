@@ -24,3 +24,9 @@ func new_random_recipe():
 		randi_range(0, 2) as Enums.INGREDIENT
 	]
 	$Recipe.set_ingredients()
+
+
+func _on_pot_pot_ready() -> void:
+	GameState.current_used_ingredients = []
+	new_random_recipe()
+	$SodaDream.pot_ready()
