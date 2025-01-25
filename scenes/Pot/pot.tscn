@@ -211,7 +211,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk7gf"]
-size = Vector2(349, 106)
+size = Vector2(244, 59)
 
 [node name="PotContent" type="Sprite2D" groups=["pot_zone"]]
 self_modulate = Color(0.733333, 0.929412, 1, 1)
@@ -243,5 +243,5 @@ initial_spawn_delay = 6.0
 [node name="PotContentArea" type="Area2D" parent="."]
 
 [node name="PotCollision" type="CollisionShape2D" parent="PotContentArea"]
-position = Vector2(0, -54)
+position = Vector2(2, 6.5)
 shape = SubResource("RectangleShape2D_wk7gf")

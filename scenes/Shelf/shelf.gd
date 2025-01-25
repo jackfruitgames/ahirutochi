@@ -6,8 +6,8 @@ var IngredientScene = preload("res://scenes/Shelf/ingredient.tscn")
 
 func _add_ingredient(ingredient_type: String, index: int):
 	var ingredient_position = $IngredientSpawns.position
-	ingredient_position.y = index * 150
-	
+	ingredient_position.y = index * 130
+		
 	var ingredient = IngredientScene.instantiate()
 	ingredient.index = index
 	ingredient.position = ingredient_position
