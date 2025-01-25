@@ -12,7 +12,7 @@ var index
 func set_type(type: Enums.INGREDIENT):
 	var sprite = $Ingredient
 	ingredient = Enums.INGREDIENT.keys()[type]
-	sprite.texture = load("res://assets/img/scribbles/%s.png" % ingredient)
+	sprite.texture = load("res://assets/img/potions/%s.png" % ingredient)
 
 func _on_ingredient_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("ClickOnShelfItem"):
