@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
-[ext_resource type="Texture2D" uid="uid://cd4dofb2f35cy" path="res://assets/img/scribbles/background.png" id="2_f00xl"]
+[ext_resource type="Texture2D" uid="uid://br8dqcaqw3w8e" path="res://assets/img/background/Summer4.png" id="2_4pqlh"]
 [ext_resource type="PackedScene" uid="uid://cmmuyxt7g6h5n" path="res://scenes/Shelf/shelf.tscn" id="3_mm6c3"]
 [ext_resource type="PackedScene" uid="uid://qxnc0cgdqv36" path="res://scenes/House/house.tscn" id="3_r0or4"]
 [ext_resource type="PackedScene" uid="uid://ci5k534ymwvur" path="res://scenes/Pot/pot.tscn" id="6_22nnk"]
@@ -13,7 +13,8 @@ script = ExtResource("1_er28t")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_f00xl")
+scale = Vector2(0.855, 0.855)
+texture = ExtResource("2_4pqlh")
 
 [node name="House" parent="." instance=ExtResource("3_r0or4")]
 
