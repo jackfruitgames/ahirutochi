@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddiqhqerpc3ph"]
+[gd_scene load_steps=5 format=3 uid="uid://ddiqhqerpc3ph"]
 
 [ext_resource type="Script" path="res://scenes/Recipe/recipe.gd" id="1_yykeq"]
-[ext_resource type="Texture2D" uid="uid://c1v0xwh1j5bie" path="res://assets/img/scribbles/BLUE.png" id="2_mmq7r"]
+[ext_resource type="Texture2D" uid="uid://da35pk0akfx7u" path="res://assets/img/potions/BLUE.png" id="2_7hovn"]
+[ext_resource type="Texture2D" uid="uid://c5braqyw74a1f" path="res://assets/img/potions/GREEN.png" id="3_6evih"]
+[ext_resource type="Texture2D" uid="uid://crie1s7kocymx" path="res://assets/img/potions/RED.png" id="4_0t8n4"]
 
 [node name="Recipe" type="Node2D"]
 script = ExtResource("1_yykeq")
@@ -13,15 +15,12 @@ text = "Weakness"
 
 [node name="Ingredient1" type="Sprite2D" parent="."]
 position = Vector2(68, 73)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_mmq7r")
+texture = ExtResource("2_7hovn")
 
 [node name="Ingredient2" type="Sprite2D" parent="."]
 position = Vector2(199, 73)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_mmq7r")
+texture = ExtResource("3_6evih")
 
 [node name="Ingredient3" type="Sprite2D" parent="."]
 position = Vector2(326, 73)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_mmq7r")
+texture = ExtResource("4_0t8n4")
