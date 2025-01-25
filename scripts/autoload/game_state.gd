@@ -8,6 +8,7 @@ var current_recipe: Array = [
 	randi_range(0, 2) as Enums.INGREDIENT
 ]
 var current_used_ingredients: Array = []
+var current_pot_color: Color = Color.BLACK
 
 func reset_state() -> void:
 	health = 100
@@ -18,3 +19,4 @@ func reset_state() -> void:
 		randi_range(0, 2) as Enums.INGREDIENT
 	]
 	current_used_ingredients = []
+	current_pot_color = Color.BLACK

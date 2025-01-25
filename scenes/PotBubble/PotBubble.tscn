@@ -73,6 +73,7 @@ animations = [{
 script = ExtResource("2_303k5")
 
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_7bscb")
 frame = 7
 frame_progress = 1.0

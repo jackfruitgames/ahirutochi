@@ -14,23 +14,28 @@ func on_bubble_exploded() -> void:
 	bubble_exploded.emit()
 
 func add_ingredient(ingredient: Enums.INGREDIENT):
+	var new_color = GameState.current_pot_color
 	$PotBlubber.modulate = Color.html("#000000")
 	match ingredient:
 		Enums.INGREDIENT.RED:
-			$PotBlubber.modulate = Color.html("#ff0057")
+			new_color += Color.html("#ff0057")
 			$AnimationPlayer.play("POT_RED")
 		Enums.INGREDIENT.GREEN:
-			$PotBlubber.modulate = Color.html("#169f45")
+			new_color += Color.html("#169f45")
 			$AnimationPlayer.play("POT_GREEN")
 		Enums.INGREDIENT.BLUE:
-			$PotBlubber.modulate = Color.html("#4725ff")
+			new_color = Color.html("#4725ff")
 			$AnimationPlayer.play("POT_BLUE")
-			
+
 	GameState.current_used_ingredients.append(ingredient)
+	new_color = new_color / len(GameState.current_used_ingredients)
+	$PotBlubber.modulate = new_color
+	GameState.current_pot_color = new_color
 	check_if_recipe_is_finished()
 
 func empty_the_pot():
 	$PotBlubber.modulate = Color.WHITE
+	GameState.current_pot_color = Color.BLACK
 
 func check_if_recipe_is_finished():
 	var index = 0
@@ -39,13 +44,13 @@ func check_if_recipe_is_finished():
 	for used_ingredient in GameState.current_used_ingredients:
 		print("CHECK: ", used_ingredient, GameState.current_recipe[index])
 		if GameState.current_recipe[index] != used_ingredient:
-			GameState.current_used_ingredients = []
 			print("WRONG RECEPYEE")
-			$PotBlubber.modulate = Color.html("#644117")
+			GameState.current_used_ingredients = []
+			$PotBlubber.modulate = Color.WHITE
+			GameState.current_pot_color = Color.BLACK
 			return
 		index += 1
 
 	if index < len(GameState.current_recipe):
 		return
-	$PotBlubber.modulate = Color.html("#ffd700")
 	pot_ready.emit()
