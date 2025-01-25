@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Ahirutochi"
+run/main_scene="res://scenes/Game/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [file_customization]
 
