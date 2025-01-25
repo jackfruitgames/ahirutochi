@@ -6,6 +6,7 @@ signal pot_ready
 
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
+	$Fire.play()
 	$Bubble1.bubble_exploded.connect(on_bubble_exploded)
 	$Bubble2.bubble_exploded.connect(on_bubble_exploded)
 	$Bubble3.bubble_exploded.connect(on_bubble_exploded)
