@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2llmdp2ymv2h"]
+
+[ext_resource type="Texture2D" uid="uid://c1v0xwh1j5bie" path="res://assets/img/scribbles/BLUE.png" id="1_vbghj"]
+[ext_resource type="Script" path="res://scenes/Shelf/ingredient.gd" id="2_sk287"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dla7g"]
+radius = 109.6
+
+[node name="Ingredient" type="Node2D"]
+script = ExtResource("2_sk287")
+
+[node name="Ingredient" type="Sprite2D" parent="."]
+texture = ExtResource("1_vbghj")
+
+[node name="IngredientArea2D" type="Area2D" parent="Ingredient"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient/IngredientArea2D"]
+shape = SubResource("CircleShape2D_dla7g")
+
+[connection signal="input_event" from="Ingredient/IngredientArea2D" to="." method="_on_ingredient_area_2d_input_event"]

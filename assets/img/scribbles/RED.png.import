@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8tpyjspeuivo"
-path="res://.godot/imported/pink_ingredient.png-d3b08918d9ebea824610f8afec40d14a.ctex"
+path="res://.godot/imported/RED.png-b496403f76286cfa70cbc14ef153f418.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/scribbles/pink_ingredient.png"
-dest_files=["res://.godot/imported/pink_ingredient.png-d3b08918d9ebea824610f8afec40d14a.ctex"]
+source_file="res://assets/img/scribbles/RED.png"
+dest_files=["res://.godot/imported/RED.png-b496403f76286cfa70cbc14ef153f418.ctex"]
 
 [params]
 
