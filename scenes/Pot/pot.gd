@@ -18,9 +18,10 @@ func on_bubble_exploded() -> void:
 
 
 func add_ingredient(ingredient: Enums.INGREDIENT):
+	$PotBlubber.modulate = Color.html("#000000")
 	match ingredient:
 		Enums.INGREDIENT.RED:
-			$PotBlubber.modulate = Color.html("#169f45")
+			$PotBlubber.modulate = Color.html("#ff0057")
 			$AnimationPlayer.play("POT_RED")
 		Enums.INGREDIENT.GREEN:
 			$PotBlubber.modulate = Color.html("#169f45")
