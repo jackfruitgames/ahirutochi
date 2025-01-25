@@ -20,10 +20,13 @@ func on_bubble_exploded() -> void:
 func add_ingredient(ingredient: Enums.INGREDIENT):
 	match ingredient:
 		Enums.INGREDIENT.RED:
+			$PotBlubber.modulate = Color(1, 0, 0)
 			$AnimationPlayer.play("POT_RED")
 		Enums.INGREDIENT.GREEN:
+			$PotBlubber.modulate = Color(0, 1, 0)
 			$AnimationPlayer.play("POT_GREEN")
 		Enums.INGREDIENT.BLUE:
+			$PotBlubber.modulate = Color(0, 0, 1)
 			$AnimationPlayer.play("POT_BLUE")
 			
 	GameState.current_used_ingredients.append(ingredient)

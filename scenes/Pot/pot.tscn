@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci5k534ymwvur"]
+[gd_scene load_steps=17 format=3 uid="uid://ci5k534ymwvur"]
 
 [ext_resource type="Script" path="res://scenes/Pot/pot.gd" id="2_uyucb"]
 [ext_resource type="Texture2D" uid="uid://bikwbctgd56ok" path="res://assets/img/pot/fire.png" id="3_ijcii"]
 [ext_resource type="Texture2D" uid="uid://gju21uypxjne" path="res://assets/img/pot/pot.png" id="3_y3t6x"]
+[ext_resource type="Texture2D" uid="uid://dvfdalfqwlu0q" path="res://assets/img/pot/pot_blubber.png" id="4_4xjgt"]
 [ext_resource type="PackedScene" uid="uid://bck8diam5h51j" path="res://scenes/PotBubble/PotBubble.tscn" id="4_rwl4r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ostf1"]
@@ -224,6 +225,9 @@ frame_progress = 0.838708
 
 [node name="Pot" type="Sprite2D" parent="."]
 texture = ExtResource("3_y3t6x")
+
+[node name="PotBlubber" type="Sprite2D" parent="."]
+texture = ExtResource("4_4xjgt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
