@@ -20,14 +20,13 @@ texture = ExtResource("2_4pqlh")
 [node name="House" parent="." instance=ExtResource("3_r0or4")]
 
 [node name="Shelf" parent="." instance=ExtResource("3_mm6c3")]
-position = Vector2(164, 236)
+position = Vector2(141, 594)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
-self_modulate = Color(1, 0.635294, 1, 1)
-position = Vector2(672, 726)
+position = Vector2(420, 726)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
-position = Vector2(1190, 614)
+position = Vector2(904, 769)
 
 [node name="Recipe" parent="." instance=ExtResource("8_lxuc3")]
 position = Vector2(1518, 34)
@@ -42,7 +41,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="SpawnPoint" type="Node2D" parent="Enemies"]
-position = Vector2(1739, 899)
+position = Vector2(1457, 914)
 
 [connection signal="bubble_exploded" from="Pot" to="." method="_on_pot_bubble_exploded"]
 [connection signal="shot_fired" from="SodaDream" to="." method="_on_soda_dream_shot_fired"]

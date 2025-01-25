@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmmuyxt7g6h5n"]
+[gd_scene load_steps=3 format=3 uid="uid://cmmuyxt7g6h5n"]
 
 [ext_resource type="Script" path="res://scenes/Shelf/shelf.gd" id="1_77xpn"]
+[ext_resource type="Texture2D" uid="uid://dx8r4vrpby0mh" path="res://assets/img/shelf/shelf.png" id="2_otnho"]
 
 [node name="Shelf" type="Node2D"]
 script = ExtResource("1_77xpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_otnho")
