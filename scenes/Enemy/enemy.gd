@@ -21,10 +21,18 @@ func _physics_process(delta: float) -> void:
 		is_hitting = true
 
 func start_the_dead() -> void:
-	$AnimationPlayer.play("dead")
+	$AnimationPlayer.play("DIEDED_TO_DEATH")
+	$AnimationPlayer.animation_finished.connect(delete_instance)
 
+func delete_instance(anim_name: String):
+	if anim_name == "DIEDED_TO_DEATH":
+		queue_free()
+	
+
+# TODO: delete this method when the caller is removed
 func kill_the_enemy() -> void:
-	queue_free()
+	#queue_free()
+	pass
 
 func _on_hit_timer_timeout() -> void:
 	var damage = 5
