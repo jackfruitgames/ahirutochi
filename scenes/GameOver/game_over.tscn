@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bust58q8lyj3n"]
+
+[ext_resource type="Script" path="res://scenes/GameOver/game_over.gd" id="1_hd8n3"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_hd8n3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 869.0
+offset_top = 483.0
+offset_right = 934.0
+offset_bottom = 506.0
+text = "Finished"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 532.0
+offset_right = 1045.0
+offset_bottom = 630.0
+text = "Restart"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
