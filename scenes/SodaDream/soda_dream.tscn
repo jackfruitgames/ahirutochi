@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://d37y8ymcxeu2y"]
+[gd_scene load_steps=3 format=3 uid="uid://d37y8ymcxeu2y"]
+
+[ext_resource type="Script" path="res://scenes/SodaDream/soda_dream.gd" id="1_3stmv"]
+[ext_resource type="Texture2D" uid="uid://bcqdsy80yqi7y" path="res://assets/img/scribbles/sodaDream.png" id="1_71cve"]
 
 [node name="SodaDream" type="Node2D"]
+script = ExtResource("1_3stmv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_71cve")
+
+[node name="TmpHitButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -15.5
+offset_right = 82.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hit the enemy (tmp)"
+
+[connection signal="pressed" from="TmpHitButton" to="." method="_on_tmp_hit_button_pressed"]

@@ -1,6 +1,7 @@
 extends Node2D
 
-# TODO: main game logic, update global state etc
+signal shot_fired
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +13,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_soda_dream_shot_fired() -> void:
-	get_node("Enemy").kill_the_enemy()
+func _on_tmp_hit_button_pressed() -> void:
+	shot_fired.emit()

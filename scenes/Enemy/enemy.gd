@@ -1,6 +1,10 @@
 extends Node2D
 
-# TODO: main game logic, update global state etc
+# true if the enemy should be hitting the house
+var is_hitting = true
+# emits every time a hit is done by the enemy
+signal hit(damage: int)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +16,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_soda_dream_shot_fired() -> void:
-	get_node("Enemy").kill_the_enemy()
+func kill_the_enemy() -> void:
+	queue_free()
+
+
+func _on_hit_timer_timeout() -> void:
+	if is_hitting:
+		hit.emit(5)

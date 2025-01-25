@@ -28,3 +28,5 @@ position = Vector2(1190, 614)
 
 [node name="Enemy" parent="." instance=ExtResource("7_q5ej7")]
 position = Vector2(1646, 616)
+
+[connection signal="shot_fired" from="SodaDream" to="." method="_on_soda_dream_shot_fired"]
