@@ -11,4 +11,4 @@ Play on [eddex.itch.io/ahirutochi](https://eddex.itch.io/ahirutochi)!
 
 ## Assets used
 
-- todo
+- https://opengameart.org/content/transparent-bubble-soap-bubble

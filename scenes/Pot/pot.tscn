@@ -1,11 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci5k534ymwvur"]
+[gd_scene load_steps=10 format=3 uid="uid://ci5k534ymwvur"]
 
 [ext_resource type="Texture2D" uid="uid://fwpcm7ioq7pk" path="res://assets/img/scribbles/pot_content.png" id="1_ulnlj"]
 [ext_resource type="Texture2D" uid="uid://bl28gree8u4hj" path="res://assets/img/scribbles/pot.png" id="2_gar4v"]
 [ext_resource type="Script" path="res://scenes/Pot/pot.gd" id="2_uyucb"]
+[ext_resource type="PackedScene" uid="uid://bck8diam5h51j" path="res://scenes/PotBubble/PotBubble.tscn" id="4_rwl4r"]
 
-[sub_resource type="Animation" id="Animation_r3kbr"]
-resource_name = "POT_COLOR_FADE"
+[sub_resource type="Animation" id="Animation_4yjqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.733333, 0.929412, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_thph2"]
+resource_name = "POT_BLUE"
 length = 3.0
 loop_mode = 1
 tracks/0/type = "bezier"
@@ -16,7 +32,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1.5, 3)
 }
 tracks/1/type = "bezier"
@@ -27,7 +43,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0.635294, -0.25, 0, 0.25, 0, 0.635294, -0.25, 0, 0.25, 0, 0.635294, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.635294, -0.25, 0, 0.25, 0, 0.321569, -0.25, 0, 0.25, 0, 0.635294, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1.5, 3)
 }
 tracks/2/type = "bezier"
@@ -53,7 +69,56 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1.5, 3)
 }
 
-[sub_resource type="Animation" id="Animation_4yjqx"]
+[sub_resource type="Animation" id="Animation_jy8dn"]
+resource_name = "POT_GREEN"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.635294, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_dng4d"]
+resource_name = "POT_RED"
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -74,7 +139,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.635294, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.235294, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -85,7 +150,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0.427451, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
@@ -102,12 +167,14 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eymi7"]
 _data = {
-"POT_COLOR_FADE": SubResource("Animation_r3kbr"),
+"POT_BLUE": SubResource("Animation_thph2"),
+"POT_GREEN": SubResource("Animation_jy8dn"),
+"POT_RED": SubResource("Animation_dng4d"),
 "RESET": SubResource("Animation_4yjqx")
 }
 
 [node name="PotContent" type="Sprite2D"]
-self_modulate = Color(1, 0.635294, 1, 1)
+self_modulate = Color(0.733333, 0.929412, 1, 1)
 texture = ExtResource("1_ulnlj")
 script = ExtResource("2_uyucb")
 
@@ -119,3 +186,13 @@ texture = ExtResource("2_gar4v")
 libraries = {
 "": SubResource("AnimationLibrary_eymi7")
 }
+
+[node name="Bubble1" parent="." instance=ExtResource("4_rwl4r")]
+position = Vector2(22, 0)
+initial_spawn_delay = 3.5
+
+[node name="Bubble2" parent="." instance=ExtResource("4_rwl4r")]
+position = Vector2(-64, -1)
+
+[node name="Bubble3" parent="." instance=ExtResource("4_rwl4r")]
+initial_spawn_delay = 6.0

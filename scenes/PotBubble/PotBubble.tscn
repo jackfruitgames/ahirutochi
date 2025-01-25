@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bck8diam5h51j"]
+
+[ext_resource type="Texture2D" uid="uid://ba72l15g8ucd1" path="res://assets/img/pot/BubbleSimple.png" id="1_1bdq4"]
+[ext_resource type="Script" path="res://scenes/PotBubble/pot_bubble.gd" id="2_303k5"]
+
+[node name="Bubble" type="Sprite2D"]
+scale = Vector2(0.197266, 0.197266)
+texture = ExtResource("1_1bdq4")
+script = ExtResource("2_303k5")
+
+[node name="BubbleButton" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -256.0
+offset_right = -256.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RespawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="BubbleButton" to="." method="_on_bubble_button_pressed"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

@@ -1,13 +1,25 @@
 extends Sprite2D
 
-# TODO: change color according to added ingredients
-# TODO: Bubbles (same color as pot content) -> new scene "Bubble"
+signal bubble_exploded
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	$AnimationPlayer.play("POT_COLOR_FADE")
+	$AnimationPlayer.play("RESET")
+	$Bubble1.bubble_exploded.connect(on_bubble_exploded)
+	$Bubble2.bubble_exploded.connect(on_bubble_exploded)
+	$Bubble3.bubble_exploded.connect(on_bubble_exploded)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func on_bubble_exploded() -> void:
+	bubble_exploded.emit()
+	print("pot: bubble exploded")
+
+
+func add_ingredient(ingredient: Enums.INGREDIENT):
+	match ingredient:
+		Enums.INGREDIENT.RED:
+			$AnimationPlayer.play("POT_RED")
+		Enums.INGREDIENT.GREEN:
+			$AnimationPlayer.play("POT_GREEN")
+		Enums.INGREDIENT.BLUE:
+			$AnimationPlayer.play("POT_BLUE")

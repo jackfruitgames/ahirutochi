@@ -1,0 +1,58 @@
+extends Sprite2D
+
+signal bubble_exploded
+
+@export var initial_spawn_delay: float = 1.0 # seconds
+var initial_delay: bool = true
+
+
+var speed: int = 20
+var delta_sum: float = 0.0
+var float_right: bool = true
+var popped: bool = false
+
+func _ready() -> void:
+	visible = false
+
+func _process(delta: float) -> void:
+	delta_sum += delta
+	if initial_delay:
+		if delta_sum < initial_spawn_delay:
+			return # wait for initial delay before doing anything
+		else:
+			initial_delay = false
+			visible = true
+	
+	if (delta_sum > 2):
+		delta_sum = 0
+		float_right = !float_right
+	
+	# move bubble up and slightly left and right
+	if !popped:
+		position.y -= 3 * speed * delta
+		position.x += (1 if float_right else -1 * delta_sum) * speed * delta
+	
+	if position.y < -500 and !popped:
+		print("bubble: bubble explosion")
+		bubble_exploded.emit()
+		popped = true
+		reset_bubble()
+
+
+func reset_bubble():
+	visible = false
+	$RespawnTimer.wait_time = randf_range(0.5, 2)
+	$RespawnTimer.start()
+
+
+func _on_bubble_button_pressed() -> void:
+	print("bubble: bubble popped")
+	popped = true
+	reset_bubble()
+
+
+func _on_respawn_timer_timeout() -> void:
+	print("bubble: bubble respawn")
+	popped = false
+	visible = true
+	position = Vector2i(randi_range(-50, 50), 0)
