@@ -38,4 +38,5 @@ func _on_death_timer_timeout() -> void:
 			$Enemies.enemy_killed()
 
 func _on_soda_dream_filling() -> void:
+	print("empty the pot")
 	$Pot.empty_the_pot()

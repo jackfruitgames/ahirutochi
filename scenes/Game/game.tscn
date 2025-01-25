@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b86cp73iwayqj"]
+[gd_scene load_steps=12 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
 [ext_resource type="Texture2D" uid="uid://br8dqcaqw3w8e" path="res://assets/img/background/Summer4.png" id="2_4pqlh"]
@@ -12,21 +12,9 @@
 [ext_resource type="Script" path="res://scenes/Game/enemy_manager.gd" id="8_bt56v"]
 [ext_resource type="PackedScene" uid="uid://ddiqhqerpc3ph" path="res://scenes/Recipe/recipe.tscn" id="8_lxuc3"]
 
-[sub_resource type="Gradient" id="Gradient_dqv7v"]
-offsets = PackedFloat32Array(0, 0.87013, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.772727, 0.772727, 0.772727, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_p2hwq"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dsfdh"]
-width = 521
-invert = true
-color_ramp = SubResource("Gradient_dqv7v")
-noise = SubResource("FastNoiseLite_p2hwq")
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_er28t")
-metadata/_edit_horizontal_guides_ = [905.0]
+metadata/_edit_horizontal_guides_ = [919.0]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -65,14 +53,14 @@ position = Vector2(670, 859)
 texture = ExtResource("5_2d4pp")
 
 [node name="Pipe2" type="Sprite2D" parent="Pipes"]
-position = Vector2(921, 874)
+position = Vector2(882, 875)
 texture = ExtResource("6_anywr")
 
 [node name="Cannon" parent="Pipes" instance=ExtResource("7_ho0l0")]
-position = Vector2(980, 858)
+position = Vector2(998, 859)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
-position = Vector2(434, 878)
+position = Vector2(386, 890)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
 position = Vector2(804, 828)
@@ -80,17 +68,9 @@ position = Vector2(804, 828)
 [node name="Recipe" parent="." instance=ExtResource("8_lxuc3")]
 position = Vector2(1375, 32)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(467.5, 537.5)
-scale = Vector2(1.99805, 2.10352)
-enabled = false
-energy = 10.0
-blend_mode = 1
-texture = SubResource("NoiseTexture2D_dsfdh")
-texture_scale = 0.9
-
 [connection signal="timeout" from="Enemies/NewEnemyTimer" to="Enemies" method="_on_new_enemy_timer_timeout"]
 [connection signal="timeout" from="Enemies/DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="bubble_exploded" from="Pot" to="." method="_on_pot_bubble_exploded"]
 [connection signal="pot_ready" from="Pot" to="." method="_on_pot_pot_ready"]
+[connection signal="filling" from="SodaDream" to="." method="_on_soda_dream_filling"]
 [connection signal="shot_fired" from="SodaDream" to="." method="_on_soda_dream_shot_fired"]

@@ -7,6 +7,9 @@ var tank_fill_procentage = 0
 # Pressure from 0 to 180 max
 var pressure = 0
 
+func _ready() -> void:
+	$TankFillProgressBar.value = 0
+
 func _process(delta: float) -> void:
 	$Arrow.rotation_degrees = pressure - 90
 

@@ -54,14 +54,15 @@ texture_normal = ExtResource("7_0amf7")
 texture_pressed = ExtResource("8_pwdan")
 
 [node name="TankFillProgressBar" type="ProgressBar" parent="."]
-offset_left = -55.0
+offset_left = 51.0
 offset_top = 208.0
-offset_right = 274.0
-offset_bottom = 379.0
+offset_right = 380.0
+offset_bottom = 236.0
 rotation = -1.5708
 theme_override_styles/fill = SubResource("StyleBoxFlat_l7w7m")
 step = 1.0
 value = 10.0
+rounded = true
 show_percentage = false
 
 [node name="TankFillTimer" type="Timer" parent="."]
