@@ -15,7 +15,7 @@ script = ExtResource("1_3stmv")
 texture = ExtResource("2_pye7b")
 
 [node name="PressureGauge" type="Sprite2D" parent="."]
-position = Vector2(-88, -32)
+position = Vector2(-116, -156)
 texture = ExtResource("3_dkpbu")
 
 [node name="Arrow" type="Sprite2D" parent="."]

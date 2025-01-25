@@ -1,16 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://b86cp73iwayqj"]
+[gd_scene load_steps=11 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
 [ext_resource type="Texture2D" uid="uid://br8dqcaqw3w8e" path="res://assets/img/background/Summer4.png" id="2_4pqlh"]
 [ext_resource type="PackedScene" uid="uid://cmmuyxt7g6h5n" path="res://scenes/Shelf/shelf.tscn" id="3_mm6c3"]
 [ext_resource type="PackedScene" uid="uid://qxnc0cgdqv36" path="res://scenes/House/house.tscn" id="3_r0or4"]
+[ext_resource type="Texture2D" uid="uid://ckrpvm27ct2vy" path="res://assets/img/soda/Pipe1.png" id="5_2d4pp"]
 [ext_resource type="PackedScene" uid="uid://ci5k534ymwvur" path="res://scenes/Pot/pot.tscn" id="6_22nnk"]
 [ext_resource type="PackedScene" uid="uid://d37y8ymcxeu2y" path="res://scenes/SodaDream/soda_dream.tscn" id="6_aey6b"]
+[ext_resource type="Texture2D" uid="uid://21vbqkgyh7no" path="res://assets/img/soda/Pipe2.png" id="6_anywr"]
 [ext_resource type="Script" path="res://scenes/Game/enemy_manager.gd" id="8_bt56v"]
 [ext_resource type="PackedScene" uid="uid://ddiqhqerpc3ph" path="res://scenes/Recipe/recipe.tscn" id="8_lxuc3"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_er28t")
+metadata/_edit_horizontal_guides_ = [905.0]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -20,10 +23,24 @@ texture = ExtResource("2_4pqlh")
 [node name="House" parent="." instance=ExtResource("3_r0or4")]
 
 [node name="Shelf" parent="." instance=ExtResource("3_mm6c3")]
-position = Vector2(141, 594)
+position = Vector2(141, 668)
+
+[node name="Pipes" type="Node2D" parent="."]
+
+[node name="Pipe1" type="Sprite2D" parent="Pipes"]
+position = Vector2(670, 859)
+texture = ExtResource("5_2d4pp")
+
+[node name="Pipe2" type="Sprite2D" parent="Pipes"]
+position = Vector2(997, 861)
+texture = ExtResource("6_anywr")
+
+[node name="Pipe3" type="Sprite2D" parent="Pipes"]
+position = Vector2(1164, 861)
+texture = ExtResource("6_anywr")
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
-position = Vector2(420, 726)
+position = Vector2(434, 878)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
 position = Vector2(904, 769)
