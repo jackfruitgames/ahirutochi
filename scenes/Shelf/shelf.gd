@@ -7,9 +7,8 @@ func _ready() -> void:
 	var index = 0
 	for ingredient_type in Enums.INGREDIENT:
 		var ingredient = IngredientScene.instantiate()
-		ingredient.position = Vector2(250 * index, 10)
-		print(ingredient_type)
-		ingredient.set_type(ingredient_type)
+		ingredient.set_start_position(Vector2(250 * index, 10))
+		ingredient.set_type(Enums.INGREDIENT[ingredient_type])
 		
 		add_child(ingredient)
 		index += 1

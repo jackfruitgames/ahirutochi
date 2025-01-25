@@ -7,6 +7,7 @@
 radius = 109.6
 
 [node name="Ingredient" type="Node2D"]
+z_index = 5
 script = ExtResource("2_sk287")
 
 [node name="Ingredient" type="Sprite2D" parent="."]
@@ -17,4 +18,5 @@ texture = ExtResource("1_vbghj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient/IngredientArea2D"]
 shape = SubResource("CircleShape2D_dla7g")
 
+[connection signal="area_entered" from="Ingredient/IngredientArea2D" to="." method="_on_ingredient_area_2d_area_entered"]
 [connection signal="input_event" from="Ingredient/IngredientArea2D" to="." method="_on_ingredient_area_2d_input_event"]

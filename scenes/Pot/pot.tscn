@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ci5k534ymwvur"]
+[gd_scene load_steps=11 format=3 uid="uid://ci5k534ymwvur"]
 
 [ext_resource type="Texture2D" uid="uid://fwpcm7ioq7pk" path="res://assets/img/scribbles/pot_content.png" id="1_ulnlj"]
 [ext_resource type="Texture2D" uid="uid://bl28gree8u4hj" path="res://assets/img/scribbles/pot.png" id="2_gar4v"]
@@ -173,7 +173,10 @@ _data = {
 "RESET": SubResource("Animation_4yjqx")
 }
 
-[node name="PotContent" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk7gf"]
+size = Vector2(349, 106)
+
+[node name="PotContent" type="Sprite2D" groups=["pot_zone"]]
 self_modulate = Color(0.733333, 0.929412, 1, 1)
 texture = ExtResource("1_ulnlj")
 script = ExtResource("2_uyucb")
@@ -196,3 +199,9 @@ position = Vector2(-64, -1)
 
 [node name="Bubble3" parent="." instance=ExtResource("4_rwl4r")]
 initial_spawn_delay = 6.0
+
+[node name="PotContentArea" type="Area2D" parent="."]
+
+[node name="PotCollision" type="CollisionShape2D" parent="PotContentArea"]
+position = Vector2(-8.5, -4)
+shape = SubResource("RectangleShape2D_wk7gf")
