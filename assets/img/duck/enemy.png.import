@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pqo8fvjc61fs"
-path="res://.godot/imported/pot_blubber.png-e3a60357901b3f7b7dafe3821d6110ac.ctex"
+uid="uid://o6jbye6q6pbk"
+path="res://.godot/imported/enemy.png-862ca1e944de2190f08d91551fcbc22a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/pot/pot_blubber.png"
-dest_files=["res://.godot/imported/pot_blubber.png-e3a60357901b3f7b7dafe3821d6110ac.ctex"]
+source_file="res://assets/img/duck/enemy.png"
+dest_files=["res://.godot/imported/enemy.png-862ca1e944de2190f08d91551fcbc22a.ctex"]
 
 [params]
 

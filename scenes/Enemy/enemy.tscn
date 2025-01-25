@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://75mrk5v6elk0"]
 
 [ext_resource type="Script" path="res://scenes/Enemy/enemy.gd" id="1_l6d7s"]
-[ext_resource type="Texture2D" uid="uid://csgge5v3a2qa" path="res://assets/img/scribbles/enemyDuck.png" id="1_mw64o"]
+[ext_resource type="Texture2D" uid="uid://o6jbye6q6pbk" path="res://assets/img/duck/enemy.png" id="2_swu4a"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_l6d7s")
 
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(-2, -2)
-texture = ExtResource("1_mw64o")
+texture = ExtResource("2_swu4a")
+flip_h = true
 
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 0.504
