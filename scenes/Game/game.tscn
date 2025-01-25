@@ -24,7 +24,6 @@ texture = ExtResource("2_4pqlh")
 position = Vector2(164, 236)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
-self_modulate = Color(1, 0.635294, 1, 1)
 position = Vector2(672, 726)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
