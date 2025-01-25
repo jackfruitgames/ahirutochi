@@ -26,6 +26,25 @@ texture = ExtResource("2_4pqlh")
 [node name="Shelf" parent="." instance=ExtResource("3_mm6c3")]
 position = Vector2(141, 668)
 
+[node name="Enemies" type="Node" parent="."]
+script = ExtResource("8_bt56v")
+
+[node name="EnemyGroup" type="Node" parent="Enemies"]
+
+[node name="NewEnemyTimer" type="Timer" parent="Enemies"]
+wait_time = 5.0
+autostart = true
+
+[node name="SpawnPoint" type="Node2D" parent="Enemies"]
+position = Vector2(2220, 955)
+
+[node name="TargetPoint" type="Node2D" parent="Enemies"]
+position = Vector2(1392.34, 955)
+
+[node name="DeathTimer" type="Timer" parent="Enemies"]
+wait_time = 0.5
+one_shot = true
+
 [node name="Pipes" type="Node2D" parent="."]
 
 [node name="Pipe1" type="Sprite2D" parent="Pipes"]
@@ -48,27 +67,8 @@ position = Vector2(904, 769)
 [node name="Recipe" parent="." instance=ExtResource("8_lxuc3")]
 position = Vector2(1375, 32)
 
-[node name="Enemies" type="Node" parent="."]
-script = ExtResource("8_bt56v")
-
-[node name="EnemyGroup" type="Node" parent="Enemies"]
-
-[node name="NewEnemyTimer" type="Timer" parent="Enemies"]
-wait_time = 5.0
-autostart = true
-
-[node name="SpawnPoint" type="Node2D" parent="Enemies"]
-position = Vector2(2220, 955)
-
-[node name="TargetPoint" type="Node2D" parent="Enemies"]
-position = Vector2(1392.34, 955)
-
-[node name="DeathTimer" type="Timer" parent="Enemies"]
-wait_time = 0.5
-one_shot = true
-
+[connection signal="timeout" from="Enemies/NewEnemyTimer" to="Enemies" method="_on_new_enemy_timer_timeout"]
+[connection signal="timeout" from="Enemies/DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="bubble_exploded" from="Pot" to="." method="_on_pot_bubble_exploded"]
 [connection signal="pot_ready" from="Pot" to="." method="_on_pot_pot_ready"]
 [connection signal="shot_fired" from="SodaDream" to="." method="_on_soda_dream_shot_fired"]
-[connection signal="timeout" from="Enemies/NewEnemyTimer" to="Enemies" method="_on_new_enemy_timer_timeout"]
-[connection signal="timeout" from="Enemies/DeathTimer" to="." method="_on_death_timer_timeout"]
