@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qxnc0cgdqv36"]
 
 [ext_resource type="Script" path="res://scenes/House/house.gd" id="1_ijl3m"]
-[ext_resource type="Texture2D" uid="uid://c6acfw6mmu3m3" path="res://assets/img/scribbles/house.png" id="1_ueutg"]
+[ext_resource type="Texture2D" uid="uid://bhjp461s1gkja" path="res://assets/house/house.png" id="2_r7k0s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwnv3"]
 bg_color = Color(0.405587, 0.690943, 5.77569e-07, 1)
@@ -10,8 +10,8 @@ bg_color = Color(0.405587, 0.690943, 5.77569e-07, 1)
 script = ExtResource("1_ijl3m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(937, 532)
-texture = ExtResource("1_ueutg")
+position = Vector2(577, 648)
+texture = ExtResource("2_r7k0s")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 anchors_preset = 5
