@@ -22,9 +22,10 @@ scale = Vector2(0.855, 0.855)
 texture = ExtResource("2_4pqlh")
 
 [node name="House" parent="." instance=ExtResource("3_r0or4")]
+position = Vector2(-3, 0)
 
 [node name="Shelf" parent="." instance=ExtResource("3_mm6c3")]
-position = Vector2(141, 668)
+position = Vector2(92, 840)
 
 [node name="Enemies" type="Node" parent="."]
 script = ExtResource("8_bt56v")
@@ -52,17 +53,17 @@ position = Vector2(670, 859)
 texture = ExtResource("5_2d4pp")
 
 [node name="Pipe2" type="Sprite2D" parent="Pipes"]
-position = Vector2(997, 861)
+position = Vector2(921, 874)
 texture = ExtResource("6_anywr")
 
 [node name="Cannon" parent="Pipes" instance=ExtResource("7_ho0l0")]
-position = Vector2(1105, 845)
+position = Vector2(980, 858)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
 position = Vector2(434, 878)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
-position = Vector2(904, 769)
+position = Vector2(804, 828)
 
 [node name="Recipe" parent="." instance=ExtResource("8_lxuc3")]
 position = Vector2(1375, 32)
