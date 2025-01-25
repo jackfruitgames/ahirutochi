@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b86cp73iwayqj"]
+[gd_scene load_steps=12 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
 [ext_resource type="Texture2D" uid="uid://br8dqcaqw3w8e" path="res://assets/img/background/Summer4.png" id="2_4pqlh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ci5k534ymwvur" path="res://scenes/Pot/pot.tscn" id="6_22nnk"]
 [ext_resource type="PackedScene" uid="uid://d37y8ymcxeu2y" path="res://scenes/SodaDream/soda_dream.tscn" id="6_aey6b"]
 [ext_resource type="Texture2D" uid="uid://21vbqkgyh7no" path="res://assets/img/soda/Pipe2.png" id="6_anywr"]
+[ext_resource type="PackedScene" uid="uid://2f05oen2hax2" path="res://scenes/Cannon/cannon.tscn" id="7_ho0l0"]
 [ext_resource type="Script" path="res://scenes/Game/enemy_manager.gd" id="8_bt56v"]
 [ext_resource type="PackedScene" uid="uid://ddiqhqerpc3ph" path="res://scenes/Recipe/recipe.tscn" id="8_lxuc3"]
 
@@ -35,9 +36,8 @@ texture = ExtResource("5_2d4pp")
 position = Vector2(997, 861)
 texture = ExtResource("6_anywr")
 
-[node name="Pipe3" type="Sprite2D" parent="Pipes"]
-position = Vector2(1164, 861)
-texture = ExtResource("6_anywr")
+[node name="Cannon" parent="Pipes" instance=ExtResource("7_ho0l0")]
+position = Vector2(1105, 845)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
 position = Vector2(434, 878)
