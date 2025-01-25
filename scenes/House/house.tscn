@@ -10,7 +10,7 @@ bg_color = Color(0.405587, 0.690943, 5.77569e-07, 1)
 script = ExtResource("1_ijl3m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577, 648)
+position = Vector2(577, 541)
 texture = ExtResource("2_r7k0s")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
