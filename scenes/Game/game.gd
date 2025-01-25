@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready() -> void:
+	$Background/BackgroundAnimationPlayer.play("parallax")
+
 func _process(delta: float) -> void:
 	if GameState.health < 0:
 		# Game over
