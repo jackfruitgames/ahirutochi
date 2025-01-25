@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b86cp73iwayqj"]
+[gd_scene load_steps=10 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
 [ext_resource type="Texture2D" uid="uid://br8dqcaqw3w8e" path="res://assets/img/background/Summer4.png" id="2_4pqlh"]
 [ext_resource type="PackedScene" uid="uid://cmmuyxt7g6h5n" path="res://scenes/Shelf/shelf.tscn" id="3_mm6c3"]
 [ext_resource type="PackedScene" uid="uid://qxnc0cgdqv36" path="res://scenes/House/house.tscn" id="3_r0or4"]
+[ext_resource type="Texture2D" uid="uid://fwpcm7ioq7pk" path="res://assets/img/scribbles/pot_content.png" id="6_1ad5x"]
 [ext_resource type="PackedScene" uid="uid://ci5k534ymwvur" path="res://scenes/Pot/pot.tscn" id="6_22nnk"]
 [ext_resource type="PackedScene" uid="uid://d37y8ymcxeu2y" path="res://scenes/SodaDream/soda_dream.tscn" id="6_aey6b"]
 [ext_resource type="Script" path="res://scenes/Game/enemy_manager.gd" id="8_bt56v"]
@@ -23,13 +24,14 @@ texture = ExtResource("2_4pqlh")
 position = Vector2(141, 594)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
-position = Vector2(417, 883)
+position = Vector2(420, 726)
+texture = ExtResource("6_1ad5x")
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
 position = Vector2(904, 769)
 
 [node name="Recipe" parent="." instance=ExtResource("8_lxuc3")]
-position = Vector2(1518, 34)
+position = Vector2(1375, 32)
 
 [node name="Enemies" type="Node" parent="."]
 script = ExtResource("8_bt56v")

@@ -3,9 +3,8 @@ extends Node2D
 func _process(delta: float) -> void:
 	if GameState.health < 0:
 		# Game over
-		print("Dead...")
 		var end_scene = preload("res://scenes/GameOver/game_over.tscn")
-		get_tree().change_scene_to_packed(end_scene)
+		#get_tree().change_scene_to_packed(end_scene)
 
 func _on_soda_dream_shot_fired() -> void:
 	new_random_recipe()
