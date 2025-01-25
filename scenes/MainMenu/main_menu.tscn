@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://uwol3hthxdo6"]
+[gd_scene load_steps=7 format=3 uid="uid://uwol3hthxdo6"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_4rau3"]
+[ext_resource type="Texture2D" uid="uid://hfxubik1vsgt" path="res://assets/img/ui/Summer7.png" id="2_ag3pn"]
+[ext_resource type="StyleBox" uid="uid://cv6axvy5k3wis" path="res://scenes/MainMenu/panel_stylebox_flat.tres" id="4_be3n6"]
+[ext_resource type="FontFile" uid="uid://brxvlj5tsma6r" path="res://assets/fonts/UnifrakturCook/UnifrakturCook-Bold.ttf" id="5_1e246"]
+[ext_resource type="Texture2D" uid="uid://3q6a18ipilg1" path="res://assets/img/scribbles/GREEN.png" id="5_1yv50"]
+[ext_resource type="FontFile" uid="uid://dy0m53fp4wgh" path="res://assets/fonts/MacondoSwashCaps/MacondoSwashCaps-Regular.ttf" id="5_ldp32"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,19 +16,249 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4rau3")
 
-[node name="StartGameButton" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -61.5
-offset_top = -15.5
-offset_right = 61.5
-offset_bottom = 15.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start the game"
+texture = ExtResource("2_ag3pn")
+expand_mode = 2
 
-[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -205.0
+offset_top = -158.0
+offset_right = 205.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1e246")
+theme_override_font_sizes/font_size = 64
+text = "Play"
+
+[node name="LeaderboardButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1e246")
+theme_override_font_sizes/font_size = 64
+text = "Leaderboard"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1e246")
+theme_override_font_sizes/font_size = 64
+text = "Credits"
+
+[node name="Leaderboard" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.03
+anchor_right = 0.97
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_be3n6")
+
+[node name="CloseLeaderboardButton" type="Button" parent="Leaderboard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.5
+offset_top = -74.0
+offset_right = 66.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_1e246")
+theme_override_font_sizes/font_size = 50
+text = "close"
+
+[node name="Credits" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.03
+anchor_right = 0.97
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_be3n6")
+
+[node name="GridContainer" type="GridContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0254876
+anchor_top = 0.0433412
+anchor_right = 0.972961
+anchor_bottom = 0.950552
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_1yv50")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_ldp32")
+theme_override_fonts/bold_font = ExtResource("5_ldp32")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "[b]Benj[/b]
+- Code
+- Pixelart"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Credits/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_1yv50")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_ldp32")
+theme_override_fonts/bold_font = ExtResource("5_ldp32")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "[b]Brian[/b]
+- Master of Pixelart"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Credits/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_1yv50")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_ldp32")
+theme_override_fonts/bold_font = ExtResource("5_ldp32")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "[b]Jan[/b]
+- Code"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Credits/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_1yv50")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_ldp32")
+theme_override_fonts/bold_font = ExtResource("5_ldp32")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "[b]Marco[/b]
+- Code
+- Pixelart"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="Credits/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer5"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_1yv50")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer5"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_ldp32")
+theme_override_fonts/bold_font = ExtResource("5_ldp32")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "[b]Nina[/b]
+- Pixelart"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="Credits/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Credits/GridContainer/VBoxContainer6"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_1yv50")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/GridContainer/VBoxContainer6"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_ldp32")
+theme_override_fonts/bold_font = ExtResource("5_ldp32")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "[b]Yannik[/b]
+- Project Management
+- Head of Coke"
+
+[node name="CloseCreditsButton" type="Button" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.5
+offset_top = -74.0
+offset_right = 66.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_1e246")
+theme_override_font_sizes/font_size = 50
+text = "close"
+
+[connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Leaderboard/CloseLeaderboardButton" to="." method="_on_close_leaderboard_button_pressed"]
+[connection signal="pressed" from="Credits/CloseCreditsButton" to="." method="_on_close_credits_button_pressed"]

@@ -12,3 +12,5 @@ Play on [eddex.itch.io/ahirutochi](https://eddex.itch.io/ahirutochi)!
 ## Assets used
 
 - https://opengameart.org/content/transparent-bubble-soap-bubble
+- https://free-game-assets.itch.io/free-summer-pixel-art-backgrounds
+- https://fonts.google.com/specimen/UnifrakturCook
