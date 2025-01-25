@@ -11,6 +11,9 @@ func _on_soda_dream_shot_fired() -> void:
 	new_random_recipe()
 	$Pipes/Cannon.cannon_shot()
 	$Enemies/DeathTimer.start()
+	if $Enemies/EnemyGroup.get_child_count() > 0:
+		for enemy in $Enemies/EnemyGroup.get_children():
+			enemy.start_the_dead()
 
 func _on_pot_bubble_exploded() -> void:
 	GameState.health -= 10

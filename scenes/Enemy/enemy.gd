@@ -20,9 +20,11 @@ func _physics_process(delta: float) -> void:
 	if not is_hitting and position.distance_to(target_position) < 1:
 		is_hitting = true
 
+func start_the_dead() -> void:
+	$AnimationPlayer.play("dead")
+
 func kill_the_enemy() -> void:
 	queue_free()
-
 
 func _on_hit_timer_timeout() -> void:
 	var damage = 5

@@ -1,7 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://75mrk5v6elk0"]
+[gd_scene load_steps=6 format=3 uid="uid://75mrk5v6elk0"]
 
 [ext_resource type="Script" path="res://scenes/Enemy/enemy.gd" id="1_l6d7s"]
 [ext_resource type="Texture2D" uid="uid://o6jbye6q6pbk" path="res://assets/img/duck/enemy.png" id="2_swu4a"]
+
+[sub_resource type="Animation" id="Animation_4j2b8"]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.96667),
+"transitions": PackedFloat32Array(1, 0.2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_2ixfm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uidjd"]
+_data = {
+"RESET": SubResource("Animation_2ixfm"),
+"dead": SubResource("Animation_4j2b8")
+}
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_l6d7s")
@@ -14,5 +50,10 @@ flip_h = true
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 0.504
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uidjd")
+}
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
