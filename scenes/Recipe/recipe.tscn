@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddiqhqerpc3ph"]
+[gd_scene load_steps=6 format=3 uid="uid://ddiqhqerpc3ph"]
 
 [ext_resource type="Script" path="res://scenes/Recipe/recipe.gd" id="1_yykeq"]
-[ext_resource type="Texture2D" uid="uid://da35pk0akfx7u" path="res://assets/img/potions/BLUE.png" id="2_7hovn"]
-[ext_resource type="Texture2D" uid="uid://c5braqyw74a1f" path="res://assets/img/potions/GREEN.png" id="3_6evih"]
-[ext_resource type="Texture2D" uid="uid://crie1s7kocymx" path="res://assets/img/potions/RED.png" id="4_0t8n4"]
+[ext_resource type="Texture2D" uid="uid://4oaeb80365ae" path="res://assets/img/ingredient/BLUE.png" id="3_b1w3x"]
+[ext_resource type="Texture2D" uid="uid://bmoy26a76v5of" path="res://assets/img/ingredient/good.png" id="3_wijln"]
+[ext_resource type="Texture2D" uid="uid://cfskd6o510t67" path="res://assets/img/ingredient/GREEN.png" id="4_jicn8"]
+[ext_resource type="Texture2D" uid="uid://fo21b80vre1f" path="res://assets/img/ingredient/RED.png" id="5_li4qu"]
 
 [node name="Recipe" type="Node2D"]
 script = ExtResource("1_yykeq")
@@ -11,16 +12,31 @@ script = ExtResource("1_yykeq")
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Weakness"
+text = "Recipe"
 
 [node name="Ingredient1" type="Sprite2D" parent="."]
 position = Vector2(68, 73)
-texture = ExtResource("2_7hovn")
+texture = ExtResource("3_b1w3x")
+
+[node name="Ingredient1_checkmark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(68, 73)
+texture = ExtResource("3_wijln")
 
 [node name="Ingredient2" type="Sprite2D" parent="."]
 position = Vector2(199, 73)
-texture = ExtResource("3_6evih")
+texture = ExtResource("4_jicn8")
+
+[node name="Ingredient2_checkmark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(199, 73)
+texture = ExtResource("3_wijln")
 
 [node name="Ingredient3" type="Sprite2D" parent="."]
 position = Vector2(326, 73)
-texture = ExtResource("4_0t8n4")
+texture = ExtResource("5_li4qu")
+
+[node name="Ingredient3_checkmark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(326, 73)
+texture = ExtResource("3_wijln")
