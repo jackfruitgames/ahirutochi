@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://uwol3hthxdo6"]
+[gd_scene load_steps=14 format=3 uid="uid://uwol3hthxdo6"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_4rau3"]
 [ext_resource type="Texture2D" uid="uid://hfxubik1vsgt" path="res://assets/img/ui/Summer7.png" id="2_ag3pn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b01oakwrpdhrm" path="res://assets/img/ui/ducks/duck-nina-smol.png" id="10_6x1wo"]
 [ext_resource type="Texture2D" uid="uid://c7hkhp3rpm6hj" path="res://assets/img/ui/ducks/duck-yannik-smol.png" id="11_t8xly"]
 [ext_resource type="AudioStream" uid="uid://8rbvqtaphgyf" path="res://assets/music/The_Old_Tower_Inn.mp3" id="12_6iiwc"]
+[ext_resource type="PackedScene" uid="uid://b2emjgiikqxv7" path="res://scenes/MainMenu/menumy.tscn" id="13_xaa8c"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -31,6 +32,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ag3pn")
 expand_mode = 2
+
+[node name="Enemy" parent="." instance=ExtResource("13_xaa8c")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

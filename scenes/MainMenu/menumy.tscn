@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2emjgiikqxv7"]
+
+[ext_resource type="Texture2D" uid="uid://o6jbye6q6pbk" path="res://assets/img/duck/enemy.png" id="1_ut3jo"]
+[ext_resource type="Script" path="res://scenes/MainMenu/menumy.gd" id="2_pktts"]
+
+[sub_resource type="Animation" id="Animation_8dhsh"]
+resource_name = "ENEMY_MARCH"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-181, -0.25, 0, 0.25, 0, 2101, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 10)
+}
+
+[sub_resource type="Animation" id="Animation_ujdaw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-181, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtfpa"]
+_data = {
+"ENEMY_MARCH": SubResource("Animation_8dhsh"),
+"RESET": SubResource("Animation_ujdaw")
+}
+
+[sub_resource type="Animation" id="Animation_vblwm"]
+resource_name = "ENEMY_STEP"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0, 980, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_ikdfv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(981, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kihx1"]
+_data = {
+"ENEMY_STEP": SubResource("Animation_vblwm"),
+"RESET": SubResource("Animation_ikdfv")
+}
+
+[node name="Enemy" type="Sprite2D"]
+position = Vector2(-181, 981)
+texture = ExtResource("1_ut3jo")
+script = ExtResource("2_pktts")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_rtfpa")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kihx1")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
