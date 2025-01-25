@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddiqhqerpc3ph"]
+
+[ext_resource type="Script" path="res://scenes/Recipe/recipe.gd" id="1_yykeq"]
+[ext_resource type="Texture2D" uid="uid://c1v0xwh1j5bie" path="res://assets/img/scribbles/BLUE.png" id="2_mmq7r"]
+
+[node name="Recipe" type="Node2D"]
+script = ExtResource("1_yykeq")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Weakness"
+
+[node name="Ingredient1" type="Sprite2D" parent="."]
+position = Vector2(68, 73)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mmq7r")
+
+[node name="Ingredient2" type="Sprite2D" parent="."]
+position = Vector2(199, 73)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mmq7r")
+
+[node name="Ingredient3" type="Sprite2D" parent="."]
+position = Vector2(326, 73)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mmq7r")
