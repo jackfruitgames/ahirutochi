@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://ci5k534ymwvur"]
+[gd_scene load_steps=16 format=3 uid="uid://ci5k534ymwvur"]
 
-[ext_resource type="Texture2D" uid="uid://fwpcm7ioq7pk" path="res://assets/img/scribbles/pot_content.png" id="1_ulnlj"]
 [ext_resource type="Script" path="res://scenes/Pot/pot.gd" id="2_uyucb"]
 [ext_resource type="Texture2D" uid="uid://bikwbctgd56ok" path="res://assets/img/pot/fire.png" id="3_ijcii"]
 [ext_resource type="Texture2D" uid="uid://gju21uypxjne" path="res://assets/img/pot/pot.png" id="3_y3t6x"]
@@ -216,11 +215,10 @@ size = Vector2(349, 106)
 
 [node name="PotContent" type="Sprite2D" groups=["pot_zone"]]
 self_modulate = Color(0.733333, 0.929412, 1, 1)
-texture = ExtResource("1_ulnlj")
 script = ExtResource("2_uyucb")
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 367)
+position = Vector2(0, 250)
 sprite_frames = SubResource("SpriteFrames_c63m7")
 frame_progress = 0.838708
 
@@ -234,17 +232,18 @@ libraries = {
 }
 
 [node name="Bubble1" parent="." instance=ExtResource("4_rwl4r")]
-position = Vector2(22, 0)
+position = Vector2(3, 160)
 initial_spawn_delay = 3.5
 
 [node name="Bubble2" parent="." instance=ExtResource("4_rwl4r")]
-position = Vector2(-64, -1)
+position = Vector2(-49, 153)
 
 [node name="Bubble3" parent="." instance=ExtResource("4_rwl4r")]
+position = Vector2(55, 150)
 initial_spawn_delay = 6.0
 
 [node name="PotContentArea" type="Area2D" parent="."]
 
 [node name="PotCollision" type="CollisionShape2D" parent="PotContentArea"]
-position = Vector2(-8.5, -4)
+position = Vector2(-5, 139)
 shape = SubResource("RectangleShape2D_wk7gf")

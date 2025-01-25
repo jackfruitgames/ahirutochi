@@ -23,7 +23,7 @@ texture = ExtResource("2_4pqlh")
 position = Vector2(141, 594)
 
 [node name="Pot" parent="." instance=ExtResource("6_22nnk")]
-position = Vector2(437, 574)
+position = Vector2(437, 695)
 
 [node name="SodaDream" parent="." instance=ExtResource("6_aey6b")]
 position = Vector2(904, 769)
