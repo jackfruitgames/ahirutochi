@@ -19,6 +19,7 @@ var current_recipe: Array = [
 ]
 var current_used_ingredients: Array = []
 var current_pot_color: Color = Color.BLACK
+var current_sodadream_color: Color = Color.WHITE
 
 func add_to_score(points: int):
 	score += points

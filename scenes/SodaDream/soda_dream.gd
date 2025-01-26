@@ -18,9 +18,10 @@ func pot_ready() -> void:
 
 # start the whole filling process from outside
 func start_filling() -> void:
-	$TankFillProgressBar.get("theme_override_styles/fill").bg_color = GameState.current_pot_color
-	$TankFillTimer.start()
 	filling.emit()
+	var color = GameState.current_sodadream_color.lightened(0.2)
+	$TankFillProgressBar.get("theme_override_styles/fill").bg_color = color
+	$TankFillTimer.start()
 
 func _on_tmp_hit_button_pressed() -> void:
 	if pressure >= 180:

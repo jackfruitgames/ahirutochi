@@ -11,7 +11,6 @@ func _process(delta: float) -> void:
 		MusicManager.switch_to_end()
 
 func _on_soda_dream_shot_fired() -> void:
-	new_random_recipe()
 	$Pipes/Cannon.cannon_shot()
 	$Enemies/DeathTimer.start()
 	if $Enemies/EnemyGroup.get_child_count() > 0:

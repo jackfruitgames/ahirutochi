@@ -15,7 +15,6 @@ func on_bubble_exploded() -> void:
 
 func add_ingredient(ingredient: Enums.INGREDIENT):
 	var new_color = GameState.current_pot_color
-	$PotBlubber.modulate = Color.html("#000000")
 	match ingredient:
 		Enums.INGREDIENT.RED:
 			new_color += Color.html("#ff0057")
@@ -29,11 +28,14 @@ func add_ingredient(ingredient: Enums.INGREDIENT):
 
 	GameState.current_used_ingredients.append(ingredient)
 	new_color = new_color / len(GameState.current_used_ingredients)
+	new_color.a = 1
 	$PotBlubber.modulate = new_color
 	GameState.current_pot_color = new_color
 	check_if_recipe_is_finished()
 
 func empty_the_pot():
+	print("Pot empty, color: ", GameState.current_pot_color.to_html())
+	GameState.current_sodadream_color = GameState.current_pot_color
 	$PotBlubber.modulate = Color.WHITE
 	GameState.current_pot_color = Color.BLACK
 
