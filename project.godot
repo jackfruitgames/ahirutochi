@@ -15,7 +15,7 @@ config/description="A game about ducks, brewing potions and explosions."
 config/version="1.0"
 run/main_scene="res://scenes/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/image="res://assets/img/background/Summer4.png"
+boot_splash/image="res://assets/img/ui/Summer7.png"
 config/icon="res://assets/img/ingredient/GREEN.png"
 
 [autoload]
