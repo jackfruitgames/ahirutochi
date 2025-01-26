@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://75mrk5v6elk0"]
+[gd_scene load_steps=11 format=3 uid="uid://75mrk5v6elk0"]
 
 [ext_resource type="Script" path="res://scenes/Enemy/enemy.gd" id="1_l6d7s"]
 [ext_resource type="Texture2D" uid="uid://o6jbye6q6pbk" path="res://assets/img/duck/enemy.png" id="2_swu4a"]
 [ext_resource type="Texture2D" uid="uid://rqsrcvo2jdp1" path="res://assets/img/duck/enemy_head.png" id="3_5yyxr"]
 [ext_resource type="Texture2D" uid="uid://c410w3xg0eswh" path="res://assets/img/duck/enemy_body.png" id="3_qri6m"]
 [ext_resource type="Script" path="res://scenes/Enemy/laser_eye.gd" id="5_yk2br"]
+[ext_resource type="AudioStream" uid="uid://cn7ln1hyfrhbs" path="res://assets/sounds/laser.mp3" id="6_431kr"]
 
 [sub_resource type="Animation" id="Animation_233ox"]
 resource_name = "DIEDED_TO_DEATH"
@@ -303,5 +304,9 @@ initial_velocity_min = 30.0
 initial_velocity_max = 100.0
 scale_amount_min = 5.0
 scale_amount_max = 15.0
+
+[node name="LaserAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_431kr")
+bus = &"Sounds"
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

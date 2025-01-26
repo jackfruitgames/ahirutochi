@@ -42,10 +42,12 @@ func _on_tmp_hit_button_pressed() -> void:
 		$TankFillProgressBar.value = tank_fill_procentage
 		pressure = 0
 		$FillTankButton.disabled = true
+		$ShotAudio.play()
 		shot_fired.emit()
 
 func _on_tmp_fill_tank_button_pressed() -> void:
 	start_filling()
+	$FillingAudio.play()
 	$FillTankButton.disabled = true
 	$AudioStreamPlayer.play()
 

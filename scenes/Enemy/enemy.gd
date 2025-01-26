@@ -32,10 +32,12 @@ func start_the_dead() -> void:
 
 func delete_instance(anim_name: String):
 	if anim_name == "DIEDED_TO_DEATH":
+		$LaserAudio.stop()
 		queue_free()
 
 func start_hitting():
 	is_hitting = true
+	$LaserAudio.play()
 	$Laser/LeftEyeLaser.set_is_shooting(is_hitting)
 	$Laser/RightEyeLaser.set_is_shooting(is_hitting)
 

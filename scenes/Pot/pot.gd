@@ -12,6 +12,7 @@ func _ready() -> void:
 	$Bubble3.bubble_exploded.connect(on_bubble_exploded)
 
 func on_bubble_exploded() -> void:
+	$PopAudio.play()
 	bubble_exploded.emit()
 
 func add_ingredient(ingredient: Enums.INGREDIENT):

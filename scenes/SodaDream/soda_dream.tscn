@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d37y8ymcxeu2y"]
+[gd_scene load_steps=25 format=3 uid="uid://d37y8ymcxeu2y"]
 
 [ext_resource type="Script" path="res://scenes/SodaDream/soda_dream.gd" id="1_3stmv"]
 [ext_resource type="Texture2D" uid="uid://b0ajg4c5ae14x" path="res://assets/img/soda/SodaDream.png" id="2_pye7b"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bp37h66iwdrvo" path="res://assets/img/lever/Lever_right.png" id="8_pwdan"]
 [ext_resource type="AudioStream" uid="uid://7ndxdtphqin0" path="res://assets/sounds/zapsplat_household_drinking_glass_set_down_on_metal_table_002_111910.mp3" id="9_435ua"]
 [ext_resource type="Texture2D" uid="uid://bdcbjwsk6htpn" path="res://assets/img/pot/explosion_96_4x.png" id="10_0x4cw"]
+[ext_resource type="AudioStream" uid="uid://dcajrf5p7mjx5" path="res://assets/sounds/shot.mp3" id="10_dlqqt"]
+[ext_resource type="AudioStream" uid="uid://bhviuuic18tgs" path="res://assets/sounds/gear.mp3" id="11_qhjxe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7w7m"]
 bg_color = Color(1, 0.843137, 0, 1)
@@ -162,6 +164,14 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_joday")
 frame = 7
 frame_progress = 1.0
+
+[node name="ShotAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_dlqqt")
+bus = &"Sounds"
+
+[node name="FillingAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_qhjxe")
+bus = &"Sounds"
 
 [connection signal="pressed" from="HitButton" to="." method="_on_tmp_hit_button_pressed"]
 [connection signal="pressed" from="FillTankButton" to="." method="_on_tmp_fill_tank_button_pressed"]
