@@ -10,6 +10,7 @@ func create_new_enemy() -> void:
 	$EnemyGroup.add_child(new_enemy)
 
 func enemy_killed() -> void:
+	GameState.add_to_score(GameState.points_for_kill)
 	enemy_present = false
 
 func _on_new_enemy_timer_timeout() -> void:

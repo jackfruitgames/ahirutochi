@@ -27,15 +27,9 @@ func start_the_dead() -> void:
 func delete_instance(anim_name: String):
 	if anim_name == "DIEDED_TO_DEATH":
 		queue_free()
-	
-
-# TODO: delete this method when the caller is removed
-func kill_the_enemy() -> void:
-	#queue_free()
-	pass
 
 func _on_hit_timer_timeout() -> void:
-	var damage = 5
+	var damage = GameState.enemy_damage
 	if is_hitting:
 		GameState.health -= damage
 		hit.emit(damage)

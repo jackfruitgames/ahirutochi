@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qxnc0cgdqv36"]
+[gd_scene load_steps=7 format=3 uid="uid://qxnc0cgdqv36"]
 
 [ext_resource type="Script" path="res://scenes/House/house.gd" id="1_ijl3m"]
 [ext_resource type="Texture2D" uid="uid://bhjp461s1gkja" path="res://assets/img/house/house.png" id="2_r7k0s"]
 [ext_resource type="Texture2D" uid="uid://b0i63th3001f" path="res://assets/img/house/candle.png" id="3_7kres"]
+[ext_resource type="FontFile" uid="uid://brxvlj5tsma6r" path="res://assets/fonts/UnifrakturCook/UnifrakturCook-Bold.ttf" id="4_vltmh"]
+[ext_resource type="Script" path="res://scenes/House/score_label.gd" id="5_40ako"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwnv3"]
 bg_color = Color(0.405587, 0.690943, 5.77569e-07, 1)
@@ -30,3 +32,30 @@ show_percentage = false
 [node name="Candle" type="Sprite2D" parent="."]
 position = Vector2(400, 343)
 texture = ExtResource("3_7kres")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.5
+offset_top = 55.0
+offset_right = 21.5
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vltmh")
+theme_override_font_sizes/font_size = 40
+text = "Score: "
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vltmh")
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("5_40ako")

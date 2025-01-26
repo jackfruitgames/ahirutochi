@@ -19,7 +19,7 @@ func _on_soda_dream_shot_fired() -> void:
 			enemy.start_the_dead()
 
 func _on_pot_bubble_exploded() -> void:
-	GameState.health -= 10
+	GameState.health -= GameState.bubble_damage
 
 func new_random_recipe():
 	GameState.current_recipe = [
@@ -37,7 +37,6 @@ func _on_pot_pot_ready() -> void:
 func _on_death_timer_timeout() -> void:
 	if $Enemies/EnemyGroup.get_child_count() > 0:
 		for enemy in $Enemies/EnemyGroup.get_children():
-			enemy.kill_the_enemy()
 			$Enemies.enemy_killed()
 
 func _on_soda_dream_filling() -> void:
