@@ -43,16 +43,23 @@ func check_if_recipe_is_finished():
 	var index = 0
 	print("RECEPEYY: ", GameState.current_recipe)
 	print("CURRENT USED: ", GameState.current_used_ingredients)
+	if len(GameState.current_used_ingredients) > len(GameState.current_recipe):
+		wrong_ingredient_added()
+		return
+
 	for used_ingredient in GameState.current_used_ingredients:
 		print("CHECK: ", used_ingredient, GameState.current_recipe[index])
 		if GameState.current_recipe[index] != used_ingredient:
-			print("WRONG RECEPYEE")
-			GameState.current_used_ingredients = []
-			$PotBlubber.modulate = Color.WHITE
-			GameState.current_pot_color = Color.BLACK
+			wrong_ingredient_added()
 			return
 		index += 1
 
 	if index < len(GameState.current_recipe):
 		return
 	pot_ready.emit()
+
+func wrong_ingredient_added():
+	print("WRONG RECEPYEE")
+	GameState.current_used_ingredients = []
+	$PotBlubber.modulate = Color.WHITE
+	GameState.current_pot_color = Color.BLACK

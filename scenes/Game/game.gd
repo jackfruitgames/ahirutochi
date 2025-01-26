@@ -34,8 +34,6 @@ func new_random_recipe():
 	$Recipe.set_ingredients()
 
 func _on_pot_pot_ready() -> void:
-	GameState.current_used_ingredients = []
-	new_random_recipe()
 	$SodaDream.pot_ready()
 	$Owl.show_pot_ready_text()
 
@@ -46,5 +44,7 @@ func _on_death_timer_timeout() -> void:
 
 func _on_soda_dream_filling() -> void:
 	print("empty the pot")
+	GameState.current_used_ingredients = []
+	new_random_recipe()
 	$Pot.empty_the_pot()
 	$Owl.show_pressure_text()
