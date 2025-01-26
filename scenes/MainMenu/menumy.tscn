@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2emjgiikqxv7"]
+[gd_scene load_steps=14 format=3 uid="uid://b2emjgiikqxv7"]
 
 [ext_resource type="Texture2D" uid="uid://o6jbye6q6pbk" path="res://assets/img/duck/enemy.png" id="1_ut3jo"]
 [ext_resource type="Script" path="res://scenes/MainMenu/menumy.gd" id="2_pktts"]
+[ext_resource type="Texture2D" uid="uid://c410w3xg0eswh" path="res://assets/img/duck/enemy_body.png" id="3_dbqp3"]
+[ext_resource type="Texture2D" uid="uid://rqsrcvo2jdp1" path="res://assets/img/duck/enemy_head.png" id="4_8yfw3"]
 
 [sub_resource type="Animation" id="Animation_8dhsh"]
 resource_name = "ENEMY_MARCH"
 length = 10.0
-loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -74,6 +75,113 @@ _data = {
 "RESET": SubResource("Animation_ikdfv")
 }
 
+[sub_resource type="Animation" id="Animation_aprhc"]
+resource_name = "DEAD_MARCHING"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyHead:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -20, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.533333, 1)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemyBody:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnemyHead:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f7r1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyHead:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemyBody:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnemyHead:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tvaj0"]
+_data = {
+"DEAD_MARCHING": SubResource("Animation_aprhc"),
+"RESET": SubResource("Animation_f7r1a")
+}
+
 [node name="Enemy" type="Sprite2D"]
 position = Vector2(-181, 981)
 texture = ExtResource("1_ut3jo")
@@ -92,4 +200,31 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="EnemyBody" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_dbqp3")
+flip_h = true
+
+[node name="EnemyHead" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_8yfw3")
+flip_h = true
+
+[node name="DeadAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tvaj0")
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
