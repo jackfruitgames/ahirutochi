@@ -46,10 +46,10 @@ texture_normal = ExtResource("5_ffeep")
 texture_pressed = ExtResource("5_ogv6w")
 
 [node name="FillTankButton" type="TextureButton" parent="."]
-offset_left = -271.0
-offset_top = 24.0
-offset_right = -207.0
-offset_bottom = 104.0
+offset_left = -276.0
+offset_top = -14.0
+offset_right = -180.0
+offset_bottom = 106.0
 disabled = true
 texture_normal = ExtResource("7_0amf7")
 texture_pressed = ExtResource("8_pwdan")
