@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://o72ldjct6c4"]
+
+[ext_resource type="Script" path="res://scenes/MainMenu/score/score.gd" id="1_f8218"]
+[ext_resource type="FontFile" uid="uid://dy0m53fp4wgh" path="res://assets/fonts/MacondoSwashCaps/MacondoSwashCaps-Regular.ttf" id="1_ptc5i"]
+
+[node name="Score" type="HBoxContainer"]
+theme_override_constants/separation = 40
+script = ExtResource("1_f8218")
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ptc5i")
+theme_override_font_sizes/font_size = 60
+text = "Name"
+horizontal_alignment = 2
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ptc5i")
+theme_override_font_sizes/font_size = 60
+text = "Score"

@@ -7,8 +7,8 @@ func _process(delta: float) -> void:
 	if GameState.health < 0:
 		# Game over
 		var end_scene = preload("res://scenes/GameOver/game_over.tscn")
-		#get_tree().change_scene_to_packed(end_scene)
-		#MusicManager.switch_to_end()
+		get_tree().change_scene_to_packed(end_scene)
+		MusicManager.switch_to_end()
 
 func _on_soda_dream_shot_fired() -> void:
 	new_random_recipe()
