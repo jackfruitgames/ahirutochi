@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xgukbiy15wmm"]
+
+[ext_resource type="Texture2D" uid="uid://rqsrcvo2jdp1" path="res://assets/img/duck/enemy_head.png" id="1_cchpe"]
+
+[node name="Owl" type="Node2D"]
+
+[node name="EnemyHead" type="Sprite2D" parent="."]
+position = Vector2(56, 38)
+texture = ExtResource("1_cchpe")
