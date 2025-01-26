@@ -37,10 +37,10 @@ anchor_left = 0.5
 anchor_top = 0.401
 anchor_right = 0.5
 anchor_bottom = 0.401
-offset_left = -144.0
-offset_top = -42.0
-offset_right = 144.0
-offset_bottom = 42.0
+offset_left = -287.5
+offset_top = -268.5
+offset_right = 312.5
+offset_bottom = 268.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
@@ -79,6 +79,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_nobds")
 theme_override_font_sizes/font_size = 80
 placeholder_text = "Enter your name"
+alignment = 1
 context_menu_enabled = false
 shortcut_keys_enabled = false
 
@@ -86,7 +87,7 @@ shortcut_keys_enabled = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_okgew")
 theme_override_font_sizes/font_size = 80
-text = "Enter the leaderboard"
+text = "Enter leaderboard"
 
 [connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
