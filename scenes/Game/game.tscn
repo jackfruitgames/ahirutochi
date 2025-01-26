@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b86cp73iwayqj"]
+[gd_scene load_steps=22 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
 [ext_resource type="Texture2D" uid="uid://dgalsdev10v5y" path="res://assets/img/background/0.png" id="2_pomqx"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bsyagkj4tiftd" path="res://assets/img/house/light.png" id="15_o8ryu"]
 [ext_resource type="Script" path="res://scenes/Game/point_light_2d.gd" id="16_eb17j"]
 [ext_resource type="Texture2D" uid="uid://b18yqcl7304cf" path="res://assets/img/house/house-light.png" id="17_o13tv"]
+[ext_resource type="Texture2D" uid="uid://b0i63th3001f" path="res://assets/img/house/candle.png" id="18_bqeyc"]
 
 [sub_resource type="Animation" id="Animation_alyuf"]
 length = 0.001
@@ -155,6 +156,11 @@ energy = 1.2
 texture = ExtResource("15_o8ryu")
 script = ExtResource("16_eb17j")
 
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(796, 623)
+texture = ExtResource("15_o8ryu")
+script = ExtResource("16_eb17j")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(397, 385)
 texture = ExtResource("15_o8ryu")
@@ -165,6 +171,10 @@ position = Vector2(577, 542)
 color = Color(0.505344, 0.505344, 0.505344, 1)
 blend_mode = 1
 texture = ExtResource("17_o13tv")
+
+[node name="Candle" type="Sprite2D" parent="."]
+position = Vector2(798, 661)
+texture = ExtResource("18_bqeyc")
 
 [connection signal="timeout" from="Enemies/NewEnemyTimer" to="Enemies" method="_on_new_enemy_timer_timeout"]
 [connection signal="timeout" from="Enemies/DeathTimer" to="." method="_on_death_timer_timeout"]
