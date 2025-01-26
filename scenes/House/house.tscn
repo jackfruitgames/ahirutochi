@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qxnc0cgdqv36"]
+[gd_scene load_steps=8 format=3 uid="uid://qxnc0cgdqv36"]
 
 [ext_resource type="Script" path="res://scenes/House/house.gd" id="1_ijl3m"]
 [ext_resource type="Texture2D" uid="uid://bhjp461s1gkja" path="res://assets/img/house/house.png" id="2_r7k0s"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwnv3"]
 bg_color = Color(0.405587, 0.690943, 5.77569e-07, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqs63"]
+size = Vector2(50, 700)
 
 [node name="House" type="Node2D"]
 script = ExtResource("1_ijl3m")
@@ -59,3 +62,9 @@ theme_override_fonts/font = ExtResource("4_vltmh")
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("5_40ako")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(975, 731)
+shape = SubResource("RectangleShape2D_oqs63")

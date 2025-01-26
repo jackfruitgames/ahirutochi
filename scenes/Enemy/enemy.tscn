@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://75mrk5v6elk0"]
+[gd_scene load_steps=10 format=3 uid="uid://75mrk5v6elk0"]
 
 [ext_resource type="Script" path="res://scenes/Enemy/enemy.gd" id="1_l6d7s"]
 [ext_resource type="Texture2D" uid="uid://o6jbye6q6pbk" path="res://assets/img/duck/enemy.png" id="2_swu4a"]
 [ext_resource type="Texture2D" uid="uid://rqsrcvo2jdp1" path="res://assets/img/duck/enemy_head.png" id="3_5yyxr"]
 [ext_resource type="Texture2D" uid="uid://c410w3xg0eswh" path="res://assets/img/duck/enemy_body.png" id="3_qri6m"]
+[ext_resource type="Script" path="res://scenes/Enemy/laser_eye.gd" id="5_yk2br"]
 
 [sub_resource type="Animation" id="Animation_233ox"]
 resource_name = "DIEDED_TO_DEATH"
@@ -254,5 +255,53 @@ autostart = true
 libraries = {
 "": SubResource("AnimationLibrary_uidjd")
 }
+
+[node name="Laser" type="Node2D" parent="."]
+
+[node name="LeftEyeLaser" type="RayCast2D" parent="Laser"]
+modulate = Color(0.67451, 0.196078, 0.196078, 1)
+position = Vector2(-118, -50)
+target_position = Vector2(-400, 40)
+script = ExtResource("5_yk2br")
+
+[node name="Line2D" type="Line2D" parent="Laser/LeftEyeLaser"]
+modulate = Color(0.921569, 0.25098, 0.0901961, 1)
+points = PackedVector2Array(0, 0, -200, 0)
+width = 8.0
+default_color = Color(0.888048, 0.32295, 0.311036, 1)
+
+[node name="LaserHitParticles" type="CPUParticles2D" parent="Laser/LeftEyeLaser"]
+position = Vector2(-198, 0)
+amount = 20
+lifetime = 0.4
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+
+[node name="RightEyeLaser" type="RayCast2D" parent="Laser"]
+modulate = Color(0.67451, 0.196078, 0.196078, 1)
+position = Vector2(-48, -50)
+target_position = Vector2(-450, -90)
+script = ExtResource("5_yk2br")
+
+[node name="Line2D" type="Line2D" parent="Laser/RightEyeLaser"]
+modulate = Color(0.921569, 0.25098, 0.0901961, 1)
+points = PackedVector2Array(0, 0, -200, 0)
+width = 8.0
+default_color = Color(0.888048, 0.32295, 0.311036, 1)
+
+[node name="LaserHitParticles" type="CPUParticles2D" parent="Laser/RightEyeLaser"]
+position = Vector2(-203, 0)
+amount = 20
+lifetime = 0.4
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 100.0
+scale_amount_min = 5.0
+scale_amount_max = 15.0
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
