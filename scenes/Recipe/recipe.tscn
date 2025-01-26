@@ -1,42 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddiqhqerpc3ph"]
+[gd_scene load_steps=8 format=3 uid="uid://ddiqhqerpc3ph"]
 
 [ext_resource type="Script" path="res://scenes/Recipe/recipe.gd" id="1_yykeq"]
+[ext_resource type="FontFile" uid="uid://dy0m53fp4wgh" path="res://assets/fonts/MacondoSwashCaps/MacondoSwashCaps-Regular.ttf" id="2_0uxm4"]
 [ext_resource type="Texture2D" uid="uid://4oaeb80365ae" path="res://assets/img/ingredient/BLUE.png" id="3_b1w3x"]
 [ext_resource type="Texture2D" uid="uid://bmoy26a76v5of" path="res://assets/img/ingredient/good.png" id="3_wijln"]
 [ext_resource type="Texture2D" uid="uid://cfskd6o510t67" path="res://assets/img/ingredient/GREEN.png" id="4_jicn8"]
 [ext_resource type="Texture2D" uid="uid://fo21b80vre1f" path="res://assets/img/ingredient/RED.png" id="5_li4qu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5gm6"]
+bg_color = Color(0.807843, 0.647059, 0.447059, 1)
+
 [node name="Recipe" type="Node2D"]
 script = ExtResource("1_yykeq")
 
+[node name="Panel" type="Panel" parent="."]
+offset_right = 353.0
+offset_bottom = 156.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n5gm6")
+
 [node name="Label" type="Label" parent="."]
+anchors_preset = -1
+offset_left = 32.0
+offset_top = 6.0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Recipe"
+theme_override_fonts/font = ExtResource("2_0uxm4")
+theme_override_font_sizes/font_size = 26
+text = "Recipe to kill this evil duck:"
 
 [node name="Ingredient1" type="Sprite2D" parent="."]
-position = Vector2(68, 73)
+position = Vector2(68, 90)
 texture = ExtResource("3_b1w3x")
 
 [node name="Ingredient1_checkmark" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(68, 73)
+position = Vector2(68, 90)
 texture = ExtResource("3_wijln")
 
 [node name="Ingredient2" type="Sprite2D" parent="."]
-position = Vector2(199, 73)
+position = Vector2(177, 90)
 texture = ExtResource("4_jicn8")
 
 [node name="Ingredient2_checkmark" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(199, 73)
+position = Vector2(177, 90)
 texture = ExtResource("3_wijln")
 
 [node name="Ingredient3" type="Sprite2D" parent="."]
-position = Vector2(326, 73)
+position = Vector2(285.485, 90)
 texture = ExtResource("5_li4qu")
 
 [node name="Ingredient3_checkmark" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(326, 73)
+position = Vector2(285.485, 90)
 texture = ExtResource("3_wijln")

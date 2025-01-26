@@ -147,7 +147,7 @@ position = Vector2(386, 890)
 position = Vector2(804, 828)
 
 [node name="Recipe" parent="." instance=ExtResource("8_lxuc3")]
-position = Vector2(1375, 32)
+position = Vector2(1550, 32)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(394, 937)
