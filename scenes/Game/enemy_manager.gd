@@ -9,6 +9,7 @@ func create_new_enemy() -> void:
 	var new_enemy = preload("res://scenes/Enemy/enemy.tscn").instantiate()
 	new_enemy.position = $SpawnPoint.position
 	new_enemy.target_position = $TargetPoint.position
+	new_enemy.set_color(randi_range(0, 8) as Enums.ENEMY_COLOR)
 	$EnemyGroup.add_child(new_enemy)
 
 func enemy_killed() -> void:
