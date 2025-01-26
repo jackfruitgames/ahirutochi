@@ -248,5 +248,5 @@ initial_spawn_delay = 6.0
 [node name="PotContentArea" type="Area2D" parent="."]
 
 [node name="PotCollision" type="CollisionShape2D" parent="PotContentArea"]
-position = Vector2(2, 6.5)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_wk7gf")

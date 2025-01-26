@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/Shelf/ingredient.gd" id="2_sk287"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dla7g"]
-radius = 71.0282
+radius = 48.0
 
 [node name="Ingredient" type="Node2D"]
 z_index = 5
