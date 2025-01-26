@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ci5k534ymwvur"]
+[gd_scene load_steps=19 format=3 uid="uid://ci5k534ymwvur"]
 
 [ext_resource type="Script" path="res://scenes/Pot/pot.gd" id="2_uyucb"]
 [ext_resource type="Texture2D" uid="uid://bikwbctgd56ok" path="res://assets/img/pot/fire.png" id="3_ijcii"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvfdalfqwlu0q" path="res://assets/img/pot/pot_blubber.png" id="4_4xjgt"]
 [ext_resource type="PackedScene" uid="uid://bck8diam5h51j" path="res://scenes/PotBubble/PotBubble.tscn" id="4_rwl4r"]
 [ext_resource type="AudioStream" uid="uid://dcajrf5p7mjx5" path="res://assets/sounds/shot.mp3" id="6_mh386"]
+[ext_resource type="AudioStream" uid="uid://dek7kbgn2a1q2" path="res://assets/sounds/ingredient-in.wav" id="7_n8vtx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8gyp"]
 atlas = ExtResource("3_ijcii")
@@ -254,4 +255,8 @@ shape = SubResource("RectangleShape2D_wk7gf")
 
 [node name="PopAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_mh386")
+bus = &"Sounds"
+
+[node name="IngredientAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_n8vtx")
 bus = &"Sounds"

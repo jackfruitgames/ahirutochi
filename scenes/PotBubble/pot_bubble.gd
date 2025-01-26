@@ -55,6 +55,7 @@ func reset_bubble():
 
 func _on_bubble_button_pressed() -> void:
 	popped = true
+	$PopAudio.play()
 	GameState.add_to_score(GameState.points_for_bubble)
 	reset_bubble()
 

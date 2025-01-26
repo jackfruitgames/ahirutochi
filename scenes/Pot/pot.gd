@@ -16,6 +16,7 @@ func on_bubble_exploded() -> void:
 	bubble_exploded.emit()
 
 func add_ingredient(ingredient: Enums.INGREDIENT):
+	$IngredientAudio.play()
 	var new_color = GameState.current_pot_color
 	match ingredient:
 		Enums.INGREDIENT.RED:
