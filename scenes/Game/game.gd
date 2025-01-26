@@ -2,6 +2,10 @@ extends Node2D
 
 func _ready() -> void:
 	$Background/BackgroundAnimationPlayer.play("parallax")
+	$Enemies.new_enemy_spawned.connect(on_new_enemy_spawned)
+
+func on_new_enemy_spawned() -> void:
+	$Owl.show_ingredient_text()
 
 func _process(delta: float) -> void:
 	if GameState.health < 0:
@@ -13,6 +17,7 @@ func _process(delta: float) -> void:
 func _on_soda_dream_shot_fired() -> void:
 	$Pipes/Cannon.cannon_shot()
 	$Enemies/DeathTimer.start()
+	$Owl.show_bubble_text()
 	if $Enemies/EnemyGroup.get_child_count() > 0:
 		for enemy in $Enemies/EnemyGroup.get_children():
 			enemy.start_the_dead()
@@ -32,6 +37,7 @@ func _on_pot_pot_ready() -> void:
 	GameState.current_used_ingredients = []
 	new_random_recipe()
 	$SodaDream.pot_ready()
+	$Owl.show_pot_ready_text()
 
 func _on_death_timer_timeout() -> void:
 	if $Enemies/EnemyGroup.get_child_count() > 0:
@@ -41,3 +47,4 @@ func _on_death_timer_timeout() -> void:
 func _on_soda_dream_filling() -> void:
 	print("empty the pot")
 	$Pot.empty_the_pot()
+	$Owl.show_pressure_text()

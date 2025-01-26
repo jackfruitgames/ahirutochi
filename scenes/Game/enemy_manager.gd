@@ -1,5 +1,7 @@
 extends Node
 
+signal new_enemy_spawned
+
 var enemy_present = false
 
 func create_new_enemy() -> void:
@@ -17,5 +19,6 @@ func _on_new_enemy_timer_timeout() -> void:
 	if not enemy_present:
 		print("Create new enemy...")
 		create_new_enemy()
+		new_enemy_spawned.emit()
 	else:
 		print("Not create new enemy because it already exists one")
