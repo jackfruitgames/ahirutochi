@@ -6,6 +6,7 @@ signal score_updated(score: int)
 const player_health := 200
 const enemy_damage := 2
 const bubble_damage := 10
+const tank_damage := 10
 const points_for_kill := 1000
 const points_for_bubble := 100
 

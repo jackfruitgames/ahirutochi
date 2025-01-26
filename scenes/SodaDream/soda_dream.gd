@@ -2,6 +2,7 @@ extends Node2D
 
 signal shot_fired
 signal filling
+signal tank_exploded
 # Fill of the tank from 0 to 100
 var tank_fill_procentage = 0
 # Pressure from 0 to 180 max
@@ -18,10 +19,21 @@ func pot_ready() -> void:
 
 # start the whole filling process from outside
 func start_filling() -> void:
-	filling.emit()
-	var color = GameState.current_sodadream_color.lightened(0.2)
-	$TankFillProgressBar.get("theme_override_styles/fill").bg_color = color
-	$TankFillTimer.start()
+	if pressure > 0:
+		GameState.health -= GameState.tank_damage
+		$PressureTimer.stop()
+		tank_fill_procentage = 0
+		$TankFillProgressBar.value = tank_fill_procentage
+		pressure = 0
+		$FillTankButton.disabled = true
+		tank_exploded.emit()
+		$Explosion.visible = true
+		$Explosion.play()
+	else:
+		filling.emit()
+		var color = GameState.current_sodadream_color.lightened(0.2)
+		$TankFillProgressBar.get("theme_override_styles/fill").bg_color = color
+		$TankFillTimer.start()
 
 func _on_tmp_hit_button_pressed() -> void:
 	if pressure >= 180:
@@ -53,3 +65,6 @@ func _on_pressure_timer_timeout() -> void:
 	else:
 		# pressure at max
 		pass
+
+func _on_explosion_animation_finished() -> void:
+	$Explosion.visible = false

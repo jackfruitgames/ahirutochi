@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d37y8ymcxeu2y"]
+[gd_scene load_steps=23 format=3 uid="uid://d37y8ymcxeu2y"]
 
 [ext_resource type="Script" path="res://scenes/SodaDream/soda_dream.gd" id="1_3stmv"]
 [ext_resource type="Texture2D" uid="uid://b0ajg4c5ae14x" path="res://assets/img/soda/SodaDream.png" id="2_pye7b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bvbimh1cxqeg1" path="res://assets/img/lever/Lever_left.png" id="7_0amf7"]
 [ext_resource type="Texture2D" uid="uid://bp37h66iwdrvo" path="res://assets/img/lever/Lever_right.png" id="8_pwdan"]
 [ext_resource type="AudioStream" uid="uid://7ndxdtphqin0" path="res://assets/sounds/zapsplat_household_drinking_glass_set_down_on_metal_table_002_111910.mp3" id="9_435ua"]
+[ext_resource type="Texture2D" uid="uid://bdcbjwsk6htpn" path="res://assets/img/pot/explosion_96_4x.png" id="10_0x4cw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7w7m"]
 bg_color = Color(1, 0.843137, 0, 1)
@@ -20,6 +21,70 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_68v86"]
 width = 65
 curve = SubResource("Curve_40plq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6485c"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(0, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjn2y"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(384, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hcdn"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(768, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85v3v"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(1152, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g14ua"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(1536, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udga3"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(1920, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vuvp"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(2304, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiu0b"]
+atlas = ExtResource("10_0x4cw")
+region = Rect2(2688, 0, 384, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_joday"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6485c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjn2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hcdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85v3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g14ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udga3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vuvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiu0b")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
 
 [node name="SodaDream" type="Node2D"]
 script = ExtResource("1_3stmv")
@@ -91,7 +156,15 @@ scale = Vector2(0.283707, 0.739562)
 texture = SubResource("CurveTexture_68v86")
 texture_scale = 25.83
 
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_joday")
+frame = 7
+frame_progress = 1.0
+
 [connection signal="pressed" from="HitButton" to="." method="_on_tmp_hit_button_pressed"]
 [connection signal="pressed" from="FillTankButton" to="." method="_on_tmp_fill_tank_button_pressed"]
 [connection signal="timeout" from="TankFillTimer" to="." method="_on_tank_fill_timer_timeout"]
 [connection signal="timeout" from="PressureTimer" to="." method="_on_pressure_timer_timeout"]
+[connection signal="animation_finished" from="Explosion" to="." method="_on_explosion_animation_finished"]

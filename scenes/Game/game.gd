@@ -52,3 +52,6 @@ func _on_soda_dream_filling() -> void:
 	new_random_recipe()
 	$Pot.empty_the_pot()
 	$Owl.show_pressure_text()
+
+func _on_soda_dream_tank_exploded() -> void:
+	$Pot.wrong_ingredient_added()
