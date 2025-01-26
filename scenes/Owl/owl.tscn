@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://xgukbiy15wmm"]
 
-[ext_resource type="Texture2D" uid="uid://rqsrcvo2jdp1" path="res://assets/img/duck/enemy_head.png" id="1_cchpe"]
 [ext_resource type="Script" path="res://scenes/Owl/owl.gd" id="1_sac80"]
+[ext_resource type="Texture2D" uid="uid://dk8rfll4ju6lm" path="res://assets/img/owl/owl.png" id="2_3tou2"]
 [ext_resource type="FontFile" uid="uid://dy0m53fp4wgh" path="res://assets/fonts/MacondoSwashCaps/MacondoSwashCaps-Regular.ttf" id="2_xiken"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b00om"]
@@ -50,9 +50,11 @@ _data = {
 [node name="Owl" type="Node2D"]
 script = ExtResource("1_sac80")
 
-[node name="EnemyHead" type="Sprite2D" parent="."]
-position = Vector2(56, 38)
-texture = ExtResource("1_cchpe")
+[node name="Owl" type="Sprite2D" parent="."]
+position = Vector2(1, 4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_3tou2")
+flip_h = true
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(343, 130)
