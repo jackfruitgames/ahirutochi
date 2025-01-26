@@ -3,9 +3,9 @@ extends Node
 signal score_updated(score: int)
 
 # Game constants for balancing
-const player_health := 100
-const enemy_damage := 4
-const bubble_damage := 1
+const player_health := 200
+const enemy_damage := 2
+const bubble_damage := 10
 const points_for_kill := 1000
 const points_for_bubble := 100
 

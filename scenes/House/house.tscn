@@ -28,6 +28,7 @@ offset_right = 1922.0
 offset_bottom = 26.0
 grow_horizontal = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_mwnv3")
+max_value = 200.0
 step = 1.0
 value = 50.0
 show_percentage = false
