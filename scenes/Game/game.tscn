@@ -1,28 +1,105 @@
-[gd_scene load_steps=15 format=3 uid="uid://b86cp73iwayqj"]
+[gd_scene load_steps=21 format=3 uid="uid://b86cp73iwayqj"]
 
 [ext_resource type="Script" path="res://scenes/Game/game.gd" id="1_er28t"]
-[ext_resource type="Texture2D" uid="uid://br8dqcaqw3w8e" path="res://assets/img/background/Summer4.png" id="2_4pqlh"]
+[ext_resource type="Texture2D" uid="uid://dgalsdev10v5y" path="res://assets/img/background/0.png" id="2_pomqx"]
 [ext_resource type="PackedScene" uid="uid://cmmuyxt7g6h5n" path="res://scenes/Shelf/shelf.tscn" id="3_mm6c3"]
 [ext_resource type="PackedScene" uid="uid://qxnc0cgdqv36" path="res://scenes/House/house.tscn" id="3_r0or4"]
+[ext_resource type="Texture2D" uid="uid://dheo0frb44j28" path="res://assets/img/background/1.png" id="3_r1uom"]
+[ext_resource type="Texture2D" uid="uid://c0qjtd8rvtapr" path="res://assets/img/background/2.png" id="4_uxg8c"]
 [ext_resource type="Texture2D" uid="uid://ckrpvm27ct2vy" path="res://assets/img/soda/Pipe1.png" id="5_2d4pp"]
+[ext_resource type="Texture2D" uid="uid://c7tntmwd70utm" path="res://assets/img/background/3.png" id="5_gi7mh"]
 [ext_resource type="PackedScene" uid="uid://ci5k534ymwvur" path="res://scenes/Pot/pot.tscn" id="6_22nnk"]
 [ext_resource type="PackedScene" uid="uid://d37y8ymcxeu2y" path="res://scenes/SodaDream/soda_dream.tscn" id="6_aey6b"]
 [ext_resource type="Texture2D" uid="uid://21vbqkgyh7no" path="res://assets/img/soda/Pipe2.png" id="6_anywr"]
 [ext_resource type="PackedScene" uid="uid://2f05oen2hax2" path="res://scenes/Cannon/cannon.tscn" id="7_ho0l0"]
 [ext_resource type="Script" path="res://scenes/Game/enemy_manager.gd" id="8_bt56v"]
 [ext_resource type="PackedScene" uid="uid://ddiqhqerpc3ph" path="res://scenes/Recipe/recipe.tscn" id="8_lxuc3"]
-[ext_resource type="Texture2D" uid="uid://b18yqcl7304cf" path="res://assets/img/house/house-light.png" id="12_413gb"]
-[ext_resource type="Texture2D" uid="uid://bsyagkj4tiftd" path="res://assets/img/house/light.png" id="12_ntvp4"]
-[ext_resource type="Script" path="res://scenes/Game/point_light_2d.gd" id="13_8sexu"]
+[ext_resource type="Texture2D" uid="uid://bsyagkj4tiftd" path="res://assets/img/house/light.png" id="15_o8ryu"]
+[ext_resource type="Script" path="res://scenes/Game/point_light_2d.gd" id="16_eb17j"]
+[ext_resource type="Texture2D" uid="uid://b18yqcl7304cf" path="res://assets/img/house/house-light.png" id="17_o13tv"]
+
+[sub_resource type="Animation" id="Animation_alyuf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-960, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l8ofx"]
+resource_name = "parallax"
+length = 25.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-960, 0), Vector2(960, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u14xg"]
+_data = {
+"RESET": SubResource("Animation_alyuf"),
+"parallax": SubResource("Animation_l8ofx")
+}
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_er28t")
 metadata/_edit_horizontal_guides_ = [919.0]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sky" type="Sprite2D" parent="Background"]
 position = Vector2(960, 540)
-scale = Vector2(0.855, 0.855)
-texture = ExtResource("2_4pqlh")
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_pomqx")
+
+[node name="Clouds" type="Node2D" parent="Background"]
+position = Vector2(-960, 0)
+
+[node name="Clouds1" type="Sprite2D" parent="Background/Clouds"]
+position = Vector2(-960, 540)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_r1uom")
+
+[node name="Clouds2" type="Sprite2D" parent="Background/Clouds"]
+position = Vector2(960, 540)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_r1uom")
+
+[node name="Clouds3" type="Sprite2D" parent="Background/Clouds"]
+position = Vector2(2880, 540)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_r1uom")
+
+[node name="Forest1" type="Sprite2D" parent="Background"]
+position = Vector2(960, 540)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_uxg8c")
+
+[node name="Forest2" type="Sprite2D" parent="Background"]
+position = Vector2(960, 540)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("5_gi7mh")
+
+[node name="BackgroundAnimationPlayer" type="AnimationPlayer" parent="Background"]
+libraries = {
+"": SubResource("AnimationLibrary_u14xg")
+}
+speed_scale = 0.1
 
 [node name="House" parent="." instance=ExtResource("3_r0or4")]
 position = Vector2(-3, 0)
@@ -72,20 +149,22 @@ position = Vector2(804, 828)
 position = Vector2(1375, 32)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(381, 1040)
-texture = ExtResource("12_ntvp4")
-script = ExtResource("13_8sexu")
+position = Vector2(394, 937)
+scale = Vector2(1.49805, 1.51562)
+energy = 1.2
+texture = ExtResource("15_o8ryu")
+script = ExtResource("16_eb17j")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(397, 385)
-texture = ExtResource("12_ntvp4")
-script = ExtResource("13_8sexu")
+texture = ExtResource("15_o8ryu")
+script = ExtResource("16_eb17j")
 
 [node name="InsightDarkening" type="PointLight2D" parent="."]
 position = Vector2(577, 542)
 color = Color(0.505344, 0.505344, 0.505344, 1)
 blend_mode = 1
-texture = ExtResource("12_413gb")
+texture = ExtResource("17_o13tv")
 
 [connection signal="timeout" from="Enemies/NewEnemyTimer" to="Enemies" method="_on_new_enemy_timer_timeout"]
 [connection signal="timeout" from="Enemies/DeathTimer" to="." method="_on_death_timer_timeout"]
