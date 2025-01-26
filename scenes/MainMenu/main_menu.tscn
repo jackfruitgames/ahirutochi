@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvpldakf3i0do" path="res://assets/img/ui/ducks/duck-marco-smol.png" id="9_uexr0"]
 [ext_resource type="Texture2D" uid="uid://b01oakwrpdhrm" path="res://assets/img/ui/ducks/duck-nina-smol.png" id="10_6x1wo"]
 [ext_resource type="Texture2D" uid="uid://c7hkhp3rpm6hj" path="res://assets/img/ui/ducks/duck-yannik-smol.png" id="11_t8xly"]
-[ext_resource type="PackedScene" path="res://scenes/MainMenu/menumy.tscn" id="13_xaa8c"]
+[ext_resource type="PackedScene" uid="uid://b2emjgiikqxv7" path="res://scenes/MainMenu/menumy.tscn" id="13_xaa8c"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

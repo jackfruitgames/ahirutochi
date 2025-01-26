@@ -6,19 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://dvfdalfqwlu0q" path="res://assets/img/pot/pot_blubber.png" id="4_4xjgt"]
 [ext_resource type="PackedScene" uid="uid://bck8diam5h51j" path="res://scenes/PotBubble/PotBubble.tscn" id="4_rwl4r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ostf1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8gyp"]
 atlas = ExtResource("3_ijcii")
 region = Rect2(0, 0, 288, 288)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ryft"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tngl"]
 atlas = ExtResource("3_ijcii")
 region = Rect2(288, 0, 288, 288)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xiyqc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy1ft"]
 atlas = ExtResource("3_ijcii")
 region = Rect2(576, 0, 288, 288)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xk13t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_265r4"]
 atlas = ExtResource("3_ijcii")
 region = Rect2(864, 0, 288, 288)
 
@@ -27,16 +27,16 @@ resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ostf1")
+"texture": SubResource("AtlasTexture_d8gyp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8ryft")
+"texture": SubResource("AtlasTexture_8tngl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xiyqc")
+"texture": SubResource("AtlasTexture_iy1ft")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xk13t")
+"texture": SubResource("AtlasTexture_265r4")
 }],
 "loop": true,
 "name": &"default",
@@ -219,9 +219,9 @@ self_modulate = Color(0.733333, 0.929412, 1, 1)
 script = ExtResource("2_uyucb")
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 60)
+position = Vector2(1, 58)
 sprite_frames = SubResource("SpriteFrames_c63m7")
-frame_progress = 0.838708
+frame_progress = 0.166413
 
 [node name="Pot" type="Sprite2D" parent="."]
 texture = ExtResource("3_xujdw")
