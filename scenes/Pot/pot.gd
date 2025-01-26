@@ -2,6 +2,7 @@ extends Sprite2D
 
 signal bubble_exploded
 signal pot_ready
+signal wrong_ingredient
 
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
@@ -63,3 +64,4 @@ func wrong_ingredient_added():
 	GameState.current_used_ingredients = []
 	$PotBlubber.modulate = Color.WHITE
 	GameState.current_pot_color = Color.BLACK
+	wrong_ingredient.emit()

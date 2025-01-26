@@ -3,9 +3,13 @@ extends Node2D
 func _ready() -> void:
 	$Background/BackgroundAnimationPlayer.play("parallax")
 	$Enemies.new_enemy_spawned.connect(on_new_enemy_spawned)
+	$Pot.wrong_ingredient.connect(on_wrong_ingredient)
 
 func on_new_enemy_spawned() -> void:
 	$Owl.show_ingredient_text()
+	
+func on_wrong_ingredient() -> void:
+	$Owl.show_wrong_ingredient_text()
 
 func _process(delta: float) -> void:
 	if GameState.health < 0:
