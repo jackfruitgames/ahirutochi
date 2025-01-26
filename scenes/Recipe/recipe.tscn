@@ -19,7 +19,6 @@ offset_bottom = 156.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_n5gm6")
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = -1
 offset_left = 32.0
 offset_top = 6.0
 offset_right = 40.0

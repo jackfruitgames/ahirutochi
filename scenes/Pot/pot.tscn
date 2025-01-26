@@ -221,9 +221,10 @@ script = ExtResource("2_uyucb")
 [node name="Fire" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 58)
 sprite_frames = SubResource("SpriteFrames_c63m7")
-frame_progress = 0.166413
+frame_progress = 0.761523
 
 [node name="Pot" type="Sprite2D" parent="."]
+position = Vector2(0, 42)
 texture = ExtResource("3_xujdw")
 
 [node name="PotBlubber" type="Sprite2D" parent="."]
