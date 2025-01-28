@@ -25,7 +25,7 @@ Play on [eddex.itch.io/ahirutochi](https://eddex.itch.io/ahirutochi)!
 - https://opengameart.org/content/victory-fanfare-short
 - https://opengameart.org/content/medieval-the-old-tower-inn
 
-## Sounds used
+## 🔉 Sounds used
 
 - https://www.zapsplat.com/music/magic-trick-puff-of-smoke-vanish-disappear/
 - https://www.zapsplat.com/music/drinking-glass-set-down-on-metal-table-version-2/
