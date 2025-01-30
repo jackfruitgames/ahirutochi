@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="1_4rau3"]
 [ext_resource type="Texture2D" uid="uid://hfxubik1vsgt" path="res://assets/img/ui/Summer7.png" id="2_ag3pn"]
-[ext_resource type="StyleBox" path="res://scenes/MainMenu/panel_stylebox_flat.tres" id="4_be3n6"]
+[ext_resource type="StyleBox" uid="uid://cv6axvy5k3wis" path="res://scenes/MainMenu/panel_stylebox_flat.tres" id="4_be3n6"]
 [ext_resource type="FontFile" uid="uid://brxvlj5tsma6r" path="res://assets/fonts/UnifrakturCook/UnifrakturCook-Bold.ttf" id="5_1e246"]
 [ext_resource type="Texture2D" uid="uid://5800wjtcpm7w" path="res://assets/img/ui/ducks/duck-benj-smol.png" id="5_6xp74"]
 [ext_resource type="FontFile" uid="uid://dy0m53fp4wgh" path="res://assets/fonts/MacondoSwashCaps/MacondoSwashCaps-Regular.ttf" id="5_ldp32"]

@@ -8,6 +8,8 @@ var tank_fill_procentage = 0
 # Pressure from 0 to 180 max
 var pressure = 0
 
+var pot_ready_count := 0
+
 func _ready() -> void:
 	$TankFillProgressBar.value = 0
 
@@ -15,17 +17,19 @@ func _process(delta: float) -> void:
 	$Arrow.rotation_degrees = pressure - 90
 
 func pot_ready() -> void:
+	pot_ready_count += 1
 	$FillTankButton.disabled = false
 
 # start the whole filling process from outside
 func start_filling() -> void:
+	pot_ready_count -= 1
 	if pressure > 0:
 		GameState.health -= GameState.tank_damage
 		$PressureTimer.stop()
 		tank_fill_procentage = 0
 		$TankFillProgressBar.value = tank_fill_procentage
 		pressure = 0
-		$FillTankButton.disabled = true
+		$FillTankButton.disabled = true # set to disabled because pot is empty
 		tank_exploded.emit()
 		$Explosion.visible = true
 		$Explosion.play()
@@ -41,7 +45,7 @@ func _on_tmp_hit_button_pressed() -> void:
 		tank_fill_procentage = 0
 		$TankFillProgressBar.value = tank_fill_procentage
 		pressure = 0
-		$FillTankButton.disabled = true
+		$FillTankButton.disabled = pot_ready_count == 0 # if new pot is already prepared, allow filling
 		$ShotAudio.play()
 		shot_fired.emit()
 

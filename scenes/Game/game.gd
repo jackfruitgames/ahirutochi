@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func on_new_enemy_spawned() -> void:
 	$Owl.show_ingredient_text()
-	
+
 func on_wrong_ingredient() -> void:
 	$Owl.show_wrong_ingredient_text()
 

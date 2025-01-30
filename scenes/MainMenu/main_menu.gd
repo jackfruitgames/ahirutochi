@@ -36,7 +36,7 @@ func load_scores() -> void:
 
 	var config = ConfigFile.new()
 	var err = config.load("user://config.cfg")
-	
+
 
 	if err != OK:
 		print("Error while loading config file")
